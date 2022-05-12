@@ -5,7 +5,12 @@
 <div><%= title %></div>
 <% sliders.forEach(function(item) { %>
     <div>
-       <h1>YEAH</h1>
+        <p><%= item["image"] %></p>
+        <% if(item["Work"]) { %>
+            <p><%= item["Work"]["slug"] %></p>
+        <% } %>
+        <p><%= item["title"] %></p>
+        <p><%= item["subTitle"] %></p>
     </div>
 <% }); %>
 </body>
