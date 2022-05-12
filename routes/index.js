@@ -9,6 +9,7 @@ await Promise.all([
     axios.get(`/about/general`),
     axios.get('/options/get')
 ]).then(resp => {
+    console.log(resp[0].data.result, 'RESULT');
     const {logo, title} = resp[2].data.result;
     res.render('index', { sliders: resp[0].data.result, general: resp[1].data.result, logo, title });
 })
