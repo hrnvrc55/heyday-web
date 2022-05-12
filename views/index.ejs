@@ -3,5 +3,13 @@
 <body>
 <div>HEY HEY</div>
 <div><%= title %></div>
+<% sliders.forEach(function(item) { %>
+    <div>
+        <p><%= item.image %></p>
+        <p><%= item.Work?.slug %></p>
+        <p><%= item.title %></p>
+        <p>  <%= item.subTitle %></p>
+    </div>
+<% }); %>
 </body>
 </html>
