@@ -6,7 +6,7 @@
   <meta content="no" http-equiv="imagetoolbar">
   <meta content="initial-scale=1.0,minimum-scale=1,maximum-scale=5" name="viewport">
   <meta content="telephone=no" name="format-detection">
-  <title><%=title%></title>
+  <title><%= title %></title>
 
   <link href="../assets/favicons/favicon.png" rel="icon" sizes="16x16" type="image/png">
 
@@ -21,7 +21,7 @@
 </head>
 <body class="is-ready">
 <div id="wrapper">
-  <%- include("header", {logo: logo});%>
+  <%- include("header", {logo: logo}); %>
   <div class="l-navSp b-fonts__medium js-nav">
     <div class="p-navSp">
       <div class="p-header__list__item__inner--works">
@@ -45,15 +45,15 @@
         <div class="p-sideContact__unit">
           <dt class="b-fonts__medium">Hello.</dt>
           <dd><a class="js-target--pointer__stateChange lang-fonts--en c-link--underline js-hover"
-                 data-hover-in-time="1010" data-hover-out-time="850" href="mailto:<%=general.contactEmail%>"><span
-                      class="js-target__inner--pointer__stateChange c-link--underline__inner"><%=general.contactEmail%><span
+                 data-hover-in-time="1010" data-hover-out-time="850" href="mailto:<%= general.contactEmail %>"><span
+                      class="js-target__inner--pointer__stateChange c-link--underline__inner"><%= general.contactEmail %><span
                         class="c-link--underline__line"></span></span></a></dd>
         </div>
         <div class="p-sideContact__unit">
           <dt class="b-fonts__medium">Work Together.</dt>
           <dd><a class="js-target--pointer__stateChange lang-fonts--en c-link--underline js-hover"
-                 data-hover-in-time="1010" data-hover-out-time="850" href="mailto:<%=general.workTogetherEmail%>"><span
-                      class="js-target__inner--pointer__stateChange c-link--underline__inner"><%=general.workTogetherEmail%><span
+                 data-hover-in-time="1010" data-hover-out-time="850" href="mailto:<%= general.workTogetherEmail %>"><span
+                      class="js-target__inner--pointer__stateChange c-link--underline__inner"><%= general.workTogetherEmail %><span
                         class="c-link--underline__line"></span></span></a></dd>
         </div>
       </dl>
@@ -64,11 +64,11 @@
     <ul class="p-stage__menu">
       <% sliders.forEach(function(item) { %>
       <li class=" js-canvas__target"
-          data-canvas-thumb="<%=item.image%>"
-          data-canvas-url="/work-detail/<%=item.Work?.slug%>"
-          data-canvas-zoom="<%=item.image%>">
-        <h1 style="color: #D7BD9D; font-size: 40px;"><%=item.title%></h1>
-        <%=item.subTitle%>
+          data-canvas-thumb="<%= item.image %>"
+          data-canvas-url="/work-detail/<%= item.Work?.slug %>"
+          data-canvas-zoom="<%= item.image %>">
+        <h1 style="color: #D7BD9D; font-size: 40px;"><%= item.title %></h1>
+        <%= item.subTitle %>
       </li>
       <% }); %>
     </ul>
