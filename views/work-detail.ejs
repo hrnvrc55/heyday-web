@@ -10,7 +10,7 @@
     <meta http-equiv="imagetoolbar" content="no">
     <meta name="viewport" content="initial-scale=1.0,minimum-scale=1,maximum-scale=5">
     <meta name="format-detection" content="telephone=no">
-    <title><%=webSiteTitle%> - <%=detail.title%></title>
+    <title><%= webSiteTitle %> - <%= detail["title"] %></title>
     <meta name="author" content="https://asmobius.co.jp">
     <meta name="copyright" content="ARCHI SITE MOBIUS">
     <link rel="apple-touch-icon" sizes="180x180"
@@ -33,7 +33,7 @@
             <div class="p-header__left js-logo">
                 <div class="p-header__left__inner"><a class="js-target--pointer__stateChange" href="/">
                         <div class="js-target__inner--pointer__stateChange js-target__parent--spring">
-                            <img src="<%=logo%>" width="200"/>
+                            <img src="<%= logo %>" width="200"/>
                         </div>
                     </a>
                 </div>
@@ -143,13 +143,13 @@
                             <div style="position: relative">
                                 <h1 class="p-works-detail__title js-work__title">
                                     <span class="p-works-detail__title__inner js-work__title__inner">
-                                        <%=detail.title%><br/>
-                                        <small><%=detail.subTitle%></small>
+                                        <%= detail["title"] %><br/>
+                                        <small><%= detail["subTitle"]%></small>
                                     </span>
                                 </h1>
                             </div>
                             <div class="l-container p-info"><p
-                                        class="p-info__number js-transition__number js-target--split"><%=detail.updatedAt%></p>
+                                        class="p-info__number js-transition__number js-target--split"><%=detail["updatedAt"]%></p>
                                 <time class="p-info__year js-transition__year js-target--split" style="display: none;">2020</time>
                             </div>
                         </div>
@@ -163,8 +163,8 @@
                                 <div class="l-container js-transition__listContainer">
                                     <ul class="p-works-detail__list js-transition__list js-target--smooth"
                                         data-smooth-move-ratio="0.012">
-                                        <% if(detail.imageList.length > 0) { %>
-                                        <% detail.imageList.forEach(function (img, idx) { %>
+                                        <% if(detail["imageList"]) { %>
+                                        <% detail["imageList"].forEach(function (img, idx) { %>
                                         <li class="js-target--imageZoom p-works-detail__list__item js-target--indicator js-transition__list__item js-target--pointer__stateChange"
                                             data-mouse-pointer-type="zoom">
                                             <div style="overflow:hidden;" class="p-works-detail__opacity"
@@ -175,7 +175,7 @@
                                                             <div class="js-target--parallax">
                                                                 <div>
                                                                     <div class="img">
-                                                                        <img src="<%=img.imageLink%>" alt="">
+                                                                        <img src="<%=img["imageLink"]%>" alt="">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -202,16 +202,16 @@
                     <dt class="b-fonts__medium">Hello.</dt>
                     <dd><a class="js-target--pointer__stateChange lang-fonts--en c-link--underline js-hover"
                            data-hover-in-time="1010" data-hover-out-time="850"
-                           href="mailto:<%=contactEmail%>"><span
-                                    class="js-target__inner--pointer__stateChange c-link--underline__inner"><%=contactEmail%><span
+                           href="mailto:<%= contactEmail %>"><span
+                                    class="js-target__inner--pointer__stateChange c-link--underline__inner"><%= contactEmail %><span
                                         class="c-link--underline__line"></span></span></a></dd>
                 </div>
                 <div class="p-sideContact__unit">
                     <dt class="b-fonts__medium">Work Together.</dt>
                     <dd><a class="js-target--pointer__stateChange lang-fonts--en c-link--underline js-hover"
                            data-hover-in-time="1010" data-hover-out-time="850"
-                           href="mailto:<%=workTogetherEmail%>"><span
-                                    class="js-target__inner--pointer__stateChange c-link--underline__inner"><%=workTogetherEmail%><span
+                           href="mailto:<%= workTogetherEmail %>"><span
+                                    class="js-target__inner--pointer__stateChange c-link--underline__inner"><%= workTogetherEmail %><span
                                         class="c-link--underline__line"></span></span></a></dd>
                 </div>
             </dl>
@@ -221,13 +221,13 @@
         <div id="app-canvas"></div>
         <ul class="p-stage__menu">
             <% sliders.forEach(function(item) { %>
-            <li class=" js-canvas__target"
-                data-canvas-thumb="<%=item.image%>"
-                data-canvas-url="/work-detail/<%=item.Work?.slug%>"
-                data-canvas-zoom="<%=item.image%>">
-                <h1 style="color: #D7BD9D; font-size: 40px;"><%=item.title%></h1>
-                <%=item.subTitle%>
-            </li>
+                <li class=" js-canvas__target"
+                    data-canvas-thumb="<%= item["image"] %>"
+                    data-canvas-url="/work-detail/<% if(item["Work"]) { %><%= item["Work"]["slug"] %><% } else { %>'#'<% } %>"
+                    data-canvas-zoom="<%= item["image"] %>">
+                    <h1 style="color: #D7BD9D; font-size: 40px;"><%= item["title"] %></h1>
+                    <%= item["subTitle"] %>
+                </li>
             <% }); %>
 
         </ul>
