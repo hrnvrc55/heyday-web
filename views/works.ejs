@@ -6,7 +6,7 @@
     <meta content="no" http-equiv="imagetoolbar">
     <meta content="initial-scale=1.0,minimum-scale=1,maximum-scale=5" name="viewport">
     <meta content="telephone=no" name="format-detection">
-    <title><%=title%> - All</title>
+    <title><%= title %> - Works</title>
 
     <link href="../assets/favicons/favicon.png" rel="icon" sizes="16x16" type="image/png">
 
@@ -44,19 +44,19 @@
                             <% works.forEach(function(item,idx) { %>
                             <li class="p-list__item p-works__list__item"><a
                                         class="js-hover__works-list js-trigger--pageTransition js-target--pointer__stateChange js-hover"
-                                        data-hover-in-time="450" data-hover-out-time="700" href="/work-detail/<%=item.Work?.slug%>">
+                                        data-hover-in-time="450" data-hover-out-time="700" href="/work-detail/<% if(item["Work"]) { %><%= item["Work"]["slug"] %><% } else { %>'#'<% } %>">
                                     <div>
                                         <div class="js-parent--parallax p-works__text">
                                             <div class="js-target--parallax" data-parallax-move-range-y="230">
                                                 <div class="p-works__text__inner">
                                                     <div class="num">
                                                         <% if((idx + 1) > 9) { %>
-                                                        <small><%=idx + 1%></small>
+                                                        <small><%= idx + 1 %></small>
                                                         <%}else{%>
-                                                        <small>0<%=idx + 1%></small>
+                                                        <small>0<%= idx + 1 %></small>
                                                         <%}%>
                                                     </div>
-                                                    <div class="p-works__title"><h1><%=item.Work.title%></h1></div>
+                                                    <div class="p-works__title"><h1><% if(item["Work"]) { %><%= item["Work"]["title"] %><% } else { %>'-'<% } %></h1></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -65,7 +65,7 @@
                                                 <div class="p-works__thumb__maskCover"></div>
                                                 <div class="p-works__thumb__inner js-parent--parallax">
                                                     <div class="p-works__thumb__img js-target--parallax"
-                                                         style="background-image:url('<%=item.imageLink%>'); background-size: cover;"></div>
+                                                         style="background-image:url('<%= item["imageLink"] %>'); background-size: cover;"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -85,15 +85,15 @@
                 <div class="p-sideContact__unit">
                     <dt class="b-fonts__medium">Hello.</dt>
                     <dd><a class="js-target--pointer__stateChange lang-fonts--en c-link--underline js-hover"
-                           data-hover-in-time="1010" data-hover-out-time="850" href="mailto:<%=general.contactEmail%>"><span
-                                    class="js-target__inner--pointer__stateChange c-link--underline__inner"><%=general.contactEmail%><span
+                           data-hover-in-time="1010" data-hover-out-time="850" href="mailto:<%= general["contactEmail"] %>"><span
+                                    class="js-target__inner--pointer__stateChange c-link--underline__inner"><%= general["contactEmail"] %><span
                                         class="c-link--underline__line"></span></span></a></dd>
                 </div>
                 <div class="p-sideContact__unit">
                     <dt class="b-fonts__medium">Work Together.</dt>
                     <dd><a class="js-target--pointer__stateChange lang-fonts--en c-link--underline js-hover"
-                           data-hover-in-time="1010" data-hover-out-time="850" href="mailto:<%=general.workTogetherEmail%>"><span
-                                    class="js-target__inner--pointer__stateChange c-link--underline__inner"><%=general.workTogetherEmail%><span
+                           data-hover-in-time="1010" data-hover-out-time="850" href="mailto:<%= general["workTogetherEmail"] %>"><span
+                                    class="js-target__inner--pointer__stateChange c-link--underline__inner"><%= general["workTogetherEmail"] %><span
                                         class="c-link--underline__line"></span></span></a></dd>
                 </div>
             </dl>
@@ -103,13 +103,13 @@
         <div id="app-canvas"></div>
         <ul class="p-stage__menu">
             <% sliders.forEach(function(item) { %>
-            <li class=" js-canvas__target"
-                data-canvas-thumb="<%=item.image%>"
-                data-canvas-url="/work-detail/<%=item.Work?.slug%>"
-                data-canvas-zoom="<%=item.image%>">
-                <h1 style="color: #D7BD9D; font-size: 40px;"><%=item.title%></h1>
-                <%=item.subTitle%>
-            </li>
+                <li class=" js-canvas__target"
+                    data-canvas-thumb="<%= item["image"] %>"
+                    data-canvas-url="/work-detail/<% if(item["Work"]) { %><%= item["Work"]["slug"] %><% } else { %>'#'<% } %>"
+                    data-canvas-zoom="<%= item["image"] %>">
+                    <h1 style="color: #D7BD9D; font-size: 40px;"><%= item["title"] %></h1>
+                    <%= item["subTitle"] %>
+                </li>
             <% }); %>
         </ul>
     </div>
