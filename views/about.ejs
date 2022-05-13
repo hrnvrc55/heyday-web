@@ -6,7 +6,7 @@
     <meta content="no" http-equiv="imagetoolbar">
     <meta content="initial-scale=1.0,minimum-scale=1,maximum-scale=5" name="viewport">
     <meta content="telephone=no" name="format-detection">
-    <title><%=webSiteTitle%> - About</title>
+    <title><%= webSiteTitle %> - About</title>
 
     <link href="../assets/favicons/favicon.png" rel="icon" sizes="16x16" type="image/png">
 
@@ -58,14 +58,14 @@
                                         </p></div>
                                 </div>
                             </section>
-                            <section class="p-about__section js-target--indicator"><p
+                            <section class="p-about__section js-target--indicator" ><p
                                         class="p-about__section__num b-fonts__medium">02</p>
                                 <div class="p-about__section__head"><h1 class="p-about__section__title b-fonts__medium">
-                                       <%=ownerName%></h1></div>
+                                       <%= ownerName %></h1></div>
                                 <div class="p-about__section__body">
                                     <dl>
                                         <div class="c-grid">
-                                            <dt class="c-grid__head">
+                                            <dt class="c-grid__head" style="display: none;">
                                                 <div class="p-about__thumb">
                                                     <div class="p-about__thumb__inner js-target--parallax"></div>
                                                 </div>
@@ -88,9 +88,9 @@
                                         <% awardsList.forEach(function(item) { %>
                                         <div class="c-grid lang-fonts--en" lang="en">
                                             <dt class="p-about__award__dt p-about__dt c-grid__head"><p
-                                                        class="p-about__section__description"><%=item.dateText%></p></dt>
+                                                        class="p-about__section__description"><%= item["dateText"] %></p></dt>
                                             <dd class="c-grid__body p-about__dd p-about__award__dd"><p
-                                                        class="p-about__section__description"><span class="text"><%=item.description%></span>
+                                                        class="p-about__section__description"><span class="text"><%= item["description"] %></span>
                                                     </p>
                                             </dd>
                                         </div>
@@ -105,21 +105,21 @@
                                                 class="p-about__section__title b-fonts__medium">We are</h1></div>
                                     <div class="p-about__section__body">
                                         <div class="p-about__weAre__content__head" lang="en"><p
-                                                    class="p-about__section__description lang-fonts--en" lang="en"><span><%=companyName%></span><br><small></small>
+                                                    class="p-about__section__description lang-fonts--en" lang="en"><span><%= companyName %></span><br><small></small>
                                             </p></div>
                                         <dl class="lang-fonts--en" lang="en">
                                             <div class="c-grid">
                                                 <dt class="p-about__weAre__dt p-about__dt c-grid__head"><p
                                                             class="p-about__section__description">Established</p></dt>
                                                 <dd class="c-grid__body p-about__dd p-about__weAre__dd"><p
-                                                            class="p-about__section__description"><span class="text"><%=established%></span>
+                                                            class="p-about__section__description"><span class="text"><%= established %></span>
                                                     </p></dd>
                                             </div>
                                             <div class="c-grid">
                                                 <dt class="p-about__weAre__dt p-about__dt c-grid__head"><p
                                                             class="p-about__section__description">Principal</p></dt>
                                                 <dd class="c-grid__body p-about__dd p-about__weAre__dd"><p
-                                                            class="p-about__section__description"><span class="text"><%=principal%></span>
+                                                            class="p-about__section__description"><span class="text"><%= principal %></span>
                                                     </p></dd>
                                             </div>
                                             <div class="c-grid">
@@ -129,26 +129,26 @@
                                                             class="p-about__section__description"><a
                                                                 class="js-target--pointer__stateChange c-link--underline js-hover"
                                                                 data-hover-in-time="1010" data-hover-out-time="850"
-                                                                href="<%=locationLink%>" target="_blank"><span
-                                                                    class="text js-target__inner--pointer__stateChange c-link--underline__inner"><%=address%><span
+                                                                href="<%= locationLink %>" target="_blank"><span
+                                                                    class="text js-target__inner--pointer__stateChange c-link--underline__inner"><%= address %><span
                                                                         class="c-link--underline__line"></span></span></a></p></dd>
                                             </div>
                                             <div class="c-grid">
                                                 <dt class="p-about__weAre__dt p-about__dt c-grid__head"><p
                                                             class="p-about__section__description">Tel</p></dt>
                                                 <dd class="c-grid__body p-about__dd p-about__weAre__dd"><p
-                                                            class="p-about__section__description"><span class="text"><%=phoneNumber%></span>
+                                                            class="p-about__section__description"><span class="text"><%= phoneNumber %></span>
                                                     </p></dd>
                                             </div>
                                             <div class="c-grid">
                                                 <dt class="p-about__weAre__dt p-about__dt c-grid__head"><p
                                                             class="p-about__section__description">Fax</p></dt>
                                                 <dd class="c-grid__body p-about__dd p-about__weAre__dd"><p
-                                                            class="p-about__section__description"><span class="text"><%=faxNumber%></span>
+                                                            class="p-about__section__description"><span class="text"><%= faxNumber %></span>
                                                     </p></dd>
                                             </div>
                                         </dl>
-                                        <div class="p-about__weAre__content__head" lang="zh-cmn-Hans"><p
+                                        <div class="p-about__weAre__content__head" lang="zh-cmn-Hans" style="display: none;"><p
                                                     class="p-about__section__description lang-fonts--zh-cmn-Hans"
                                                     lang="zh-cmn-Hans"><span>ARCHI SITE MOBIUS CO., LTD.</span><br><small>建筑设计事务所
                                                     (东京都知事登录第62121号) </small></p></div>
@@ -248,8 +248,8 @@
                                             <dd>
                                                 <a class="js-target--pointer__stateChange lang-fonts--en c-link--underline js-hover"
                                                    data-hover-in-time="1010" data-hover-out-time="850"
-                                                   href="mailto: <%=contactEmail%>"><span
-                                                            class="js-target__inner--pointer__stateChange c-link--underline__inner"><%=contactEmail%><span
+                                                   href="mailto: <%= contactEmail %>"><span
+                                                            class="js-target__inner--pointer__stateChange c-link--underline__inner"><%= contactEmail %><span
                                                                 class="c-link--underline__line"></span></span></a></dd>
                                         </div>
                                         <div class="p-about__subContact__unit">
@@ -257,8 +257,8 @@
                                             <dd>
                                                 <a class="js-target--pointer__stateChange lang-fonts--en c-link--underline js-hover"
                                                    data-hover-in-time="1010" data-hover-out-time="850"
-                                                   href="mailto:<%=workTogetherEmail%>"><span
-                                                            class="js-target__inner--pointer__stateChange c-link--underline__inner"><%=workTogetherEmail%><span
+                                                   href="mailto:<%= workTogetherEmail %>"><span
+                                                            class="js-target__inner--pointer__stateChange c-link--underline__inner"><%= workTogetherEmail %><span
                                                                 class="c-link--underline__line"></span></span></a></dd>
                                         </div>
                                     </dl>
@@ -281,7 +281,7 @@
                             <address><a
                                         class="p-about__contact__link js-target--pointer__stateChange js-trigger--aboutHover"
                                         data-hover-in-time="1350" data-hover-out-time="1350"
-                                        href="mailto:<%=contactEmail%>"></a>
+                                        href="mailto:<%= contactEmail %>"></a>
                                 <div class="p-about__contact__bg"></div>
                             </address>
                         </div>
@@ -296,15 +296,15 @@
                 <div class="p-sideContact__unit">
                     <dt class="b-fonts__medium">Hello.</dt>
                     <dd><a class="js-target--pointer__stateChange lang-fonts--en c-link--underline js-hover"
-                           data-hover-in-time="1010" data-hover-out-time="850" href="mailto:<%=contactEmail%>"><span
-                                    class="js-target__inner--pointer__stateChange c-link--underline__inner"><%=contactEmail%><span
+                           data-hover-in-time="1010" data-hover-out-time="850" href="mailto:<%= contactEmail %>"><span
+                                    class="js-target__inner--pointer__stateChange c-link--underline__inner"><%= contactEmail %><span
                                         class="c-link--underline__line"></span></span></a></dd>
                 </div>
                 <div class="p-sideContact__unit">
                     <dt class="b-fonts__medium">Work Together.</dt>
                     <dd><a class="js-target--pointer__stateChange lang-fonts--en c-link--underline js-hover"
                            data-hover-in-time="1010" data-hover-out-time="850" href="mailto:<%=workTogetherEmail%>"><span
-                                    class="js-target__inner--pointer__stateChange c-link--underline__inner"><%=workTogetherEmail%><span
+                                    class="js-target__inner--pointer__stateChange c-link--underline__inner"><%= workTogetherEmail %><span
                                         class="c-link--underline__line"></span></span></a></dd>
                 </div>
             </dl>
@@ -314,13 +314,13 @@
         <div id="app-canvas"></div>
         <ul class="p-stage__menu">
             <% sliders.forEach(function(item) { %>
-            <li class=" js-canvas__target"
-                data-canvas-thumb="<%=item.image%>"
-                data-canvas-url="/work-detail/<%=item.Work?.slug%>"
-                data-canvas-zoom="<%=item.image%>">
-                <h1 style="color: #D7BD9D; font-size: 40px;"><%=item.title%></h1>
-                <%=item.subTitle%>
-            </li>
+                <li class=" js-canvas__target"
+                    data-canvas-thumb="<%= item["image"] %>"
+                    data-canvas-url="/work-detail/<% if(item["Work"]) { %><%= item["Work"]["slug"] %><% } else { %>'#'<% } %>"
+                    data-canvas-zoom="<%= item["image"] %>">
+                    <h1 style="color: #D7BD9D; font-size: 40px;"><%= item["title"] %></h1>
+                    <%= item["subTitle"] %>
+                </li>
             <% }); %>
         </ul>
     </div>
