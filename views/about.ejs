@@ -21,17 +21,17 @@
 </head>
 <body class="is-ready">
 <div id="wrapper">
-    <%- include('header', {logo: logo}); %>
+    <%- include("header", {logo: logo, staticList: staticList}); %>
 
     <div class="l-navSp b-fonts__medium js-nav">
         <div class="p-navSp">
             <div class="p-header__list__item__inner--works">
                 <div class="p-header__list__item--all p-navSp__item"><a
                             class="js-nav__link js-target--pointer__stateChange" href="works"><span
-                                class="js-target__inner--pointer__stateChange js-target__parent--spring">All</span></a></div>
+                                class="js-target__inner--pointer__stateChange js-target__parent--spring"><%= staticList["All"] %></span></a></div>
                 <div class="p-header__list__item--focus p-navSp__item"><a
                             class="js-nav__link js-target--pointer__stateChange" href="/"><span
-                                class="js-target__inner--pointer__stateChange js-target__parent--spring">Focus</span></a></div>
+                                class="js-target__inner--pointer__stateChange js-target__parent--spring"><%= staticList["Focus"] %></span></a></div>
             </div>
         </div>
     </div>
@@ -49,7 +49,7 @@
                                         <span class="u-block u-line js-target--split"><%= title %></span></h1></div>
                                 <div class="p-about__section__body">
                                     <div lang="en"><p class="p-about__section__description lang-fonts--en"><%- description %></p></div>
-                                    <div lang="zh-cmn-Hans"><p
+                                    <div lang="zh-cmn-Hans" style="display: none;"><p
                                                 class="p-about__section__description lang-fonts--zh-cmn-Hans">
                                             我们追求的建筑是向空间索求寂静的建筑。<br>我们敬爱的建筑家路易斯・巴拉甘说道：" 寂静可真正地去慰籍苦恼，退却恐惧。<br>无论何等豪宅大厦，或微不足道的草庐茅舍，建造一处充满寂静的住宅是建筑师的使命。<br>我们所经手的的建筑空间将一如既往地体现静寂中的美丽与舒适，从而激发住客的灵感，慰籍住客的心灵。我们同时还将建筑领域的环保问题纳入主题，在建筑手法上采用可持续性设计，在实践中追求建筑本身的不随时代而褪色的经典性以及高度耐久性。
                                         </p></div>
@@ -102,7 +102,7 @@
                                         class="p-about__section__num b-fonts__medium">04</p>
                                 <div>
                                     <div class="p-about__section__head"><h1
-                                                class="p-about__section__title b-fonts__medium">We are</h1></div>
+                                                class="p-about__section__title b-fonts__medium"><%= staticList["We Are"] %></h1></div>
                                     <div class="p-about__section__body">
                                         <div class="p-about__weAre__content__head" lang="en"><p
                                                     class="p-about__section__description lang-fonts--en" lang="en"><span><%= companyName %></span><br><small></small>
@@ -110,21 +110,21 @@
                                         <dl class="lang-fonts--en" lang="en">
                                             <div class="c-grid">
                                                 <dt class="p-about__weAre__dt p-about__dt c-grid__head"><p
-                                                            class="p-about__section__description">Established</p></dt>
+                                                            class="p-about__section__description"> <%= staticList["Established"] %></p></dt>
                                                 <dd class="c-grid__body p-about__dd p-about__weAre__dd"><p
                                                             class="p-about__section__description"><span class="text"><%= established %></span>
                                                     </p></dd>
                                             </div>
                                             <div class="c-grid">
                                                 <dt class="p-about__weAre__dt p-about__dt c-grid__head"><p
-                                                            class="p-about__section__description">Principal</p></dt>
+                                                            class="p-about__section__description"><%= staticList["Principal"] %></p></dt>
                                                 <dd class="c-grid__body p-about__dd p-about__weAre__dd"><p
                                                             class="p-about__section__description"><span class="text"><%= principal %></span>
                                                     </p></dd>
                                             </div>
                                             <div class="c-grid">
                                                 <dt class="p-about__weAre__dt p-about__dt c-grid__head"><p
-                                                            class="p-about__section__description">Location</p></dt>
+                                                            class="p-about__section__description"><%= staticList["Location"] %></p></dt>
                                                 <dd class="c-grid__body p-about__dd p-about__weAre__dd"><p
                                                             class="p-about__section__description"><a
                                                                 class="js-target--pointer__stateChange c-link--underline js-hover"
@@ -135,14 +135,14 @@
                                             </div>
                                             <div class="c-grid">
                                                 <dt class="p-about__weAre__dt p-about__dt c-grid__head"><p
-                                                            class="p-about__section__description">Tel</p></dt>
+                                                            class="p-about__section__description"><%= staticList["Tel"] %></p></dt>
                                                 <dd class="c-grid__body p-about__dd p-about__weAre__dd"><p
                                                             class="p-about__section__description"><span class="text"><%= phoneNumber %></span>
                                                     </p></dd>
                                             </div>
                                             <div class="c-grid">
                                                 <dt class="p-about__weAre__dt p-about__dt c-grid__head"><p
-                                                            class="p-about__section__description">Fax</p></dt>
+                                                            class="p-about__section__description"><%= staticList["Fax"] %></p></dt>
                                                 <dd class="c-grid__body p-about__dd p-about__weAre__dd"><p
                                                             class="p-about__section__description"><span class="text"><%= faxNumber %></span>
                                                     </p></dd>
@@ -244,7 +244,7 @@
                                 <address>
                                     <dl class="p-about__subContact__inner">
                                         <div class="p-about__subContact__unit">
-                                            <dt class="b-fonts__medium">Hello.</dt>
+                                            <dt class="b-fonts__medium"><%= staticList["Hello"] %>.</dt>
                                             <dd>
                                                 <a class="js-target--pointer__stateChange lang-fonts--en c-link--underline js-hover"
                                                    data-hover-in-time="1010" data-hover-out-time="850"
@@ -253,7 +253,7 @@
                                                                 class="c-link--underline__line"></span></span></a></dd>
                                         </div>
                                         <div class="p-about__subContact__unit">
-                                            <dt class="b-fonts__medium">Work Together.</dt>
+                                            <dt class="b-fonts__medium"><%= staticList["Work Together"] %>.</dt>
                                             <dd>
                                                 <a class="js-target--pointer__stateChange lang-fonts--en c-link--underline js-hover"
                                                    data-hover-in-time="1010" data-hover-out-time="850"
@@ -294,14 +294,14 @@
         <address class="l-wide-container">
             <dl class="p-sideContact__inner js-target--sideFix">
                 <div class="p-sideContact__unit">
-                    <dt class="b-fonts__medium">Hello.</dt>
+                    <dt class="b-fonts__medium"><%= staticList["Hello"] %>.</dt>
                     <dd><a class="js-target--pointer__stateChange lang-fonts--en c-link--underline js-hover"
                            data-hover-in-time="1010" data-hover-out-time="850" href="mailto:<%= contactEmail %>"><span
                                     class="js-target__inner--pointer__stateChange c-link--underline__inner"><%= contactEmail %><span
                                         class="c-link--underline__line"></span></span></a></dd>
                 </div>
                 <div class="p-sideContact__unit">
-                    <dt class="b-fonts__medium">Work Together.</dt>
+                    <dt class="b-fonts__medium"><%= staticList["Work Together"] %>.</dt>
                     <dd><a class="js-target--pointer__stateChange lang-fonts--en c-link--underline js-hover"
                            data-hover-in-time="1010" data-hover-out-time="850" href="mailto:<%=workTogetherEmail%>"><span
                                     class="js-target__inner--pointer__stateChange c-link--underline__inner"><%= workTogetherEmail %><span

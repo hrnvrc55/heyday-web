@@ -21,16 +21,16 @@
 </head>
 <body class="is-ready">
 <div id="wrapper">
-    <%- include('header', {logo: logo}); %>
+    <%- include("header", {logo: logo, staticList: staticList}); %>
     <div class="l-navSp b-fonts__medium js-nav">
         <div class="p-navSp">
             <div class="p-header__list__item__inner--works">
                 <div class="p-header__list__item--all p-navSp__item"><a
                             class="js-nav__link js-target--pointer__stateChange" href="works"><span
-                                class="js-target__inner--pointer__stateChange js-target__parent--spring">All</span></a></div>
+                                class="js-target__inner--pointer__stateChange js-target__parent--spring"><%= staticList["All"] %></span></a></div>
                 <div class="p-header__list__item--focus p-navSp__item"><a
                             class="js-nav__link js-target--pointer__stateChange" href="/"><span
-                                class="js-target__inner--pointer__stateChange js-target__parent--spring">Focus</span></a></div>
+                                class="js-target__inner--pointer__stateChange js-target__parent--spring"><%= staticList["Focus"] %></span></a></div>
             </div>
         </div>
     </div>
