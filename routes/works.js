@@ -5,9 +5,9 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', async function(req, res, next) {
     await Promise.all([
-        axios.get(`/work/get-works-with-images`),
-        axios.get(`/slider/all`),
-        axios.get(`/about/general`),
+        axios.get(`/work/get-works-with-images`,{headers:{"Accept-Language": req.cookies.lng ? req.cookies.lng : "" }}),
+        axios.get(`/slider/all`,{headers:{"Accept-Language": req.cookies.lng ? req.cookies.lng : "" }}),
+        axios.get(`/about/general`,{headers:{"Accept-Language": req.cookies.lng ? req.cookies.lng : "" }}),
         axios.get('/options/get'),
         axios.get('/options/website-statics',{headers:{"Accept-Language": req.cookies.lng ? req.cookies.lng : "" }})
 

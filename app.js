@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const axios = require('axios');
 const dotenv = require('dotenv');
+const cookieControl = require('./helper/cookie-control')
 dotenv.config();
 
 
@@ -29,11 +30,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/works', worksRouter);
-app.use('/about', aboutRouter);
-app.use('/work-detail', workDetail);
+app.use('/',cookieControl, indexRouter);
+app.use('/users',cookieControl, usersRouter);
+app.use('/works',cookieControl, worksRouter);
+app.use('/about',cookieControl, aboutRouter);
+app.use('/work-detail',cookieControl, workDetail);
+
 
 
 console.log(process.env.PORT, 'PORT')

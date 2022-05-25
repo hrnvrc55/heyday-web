@@ -8,7 +8,7 @@
     cursor: pointer;
     right: 0;
     height: 30px;
-    line-height: 30px;
+    border: 2px solid white;
 }
 
 .dropdown {
@@ -28,4 +28,23 @@
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+.p-control__btn.next.js-target--pointer__stateChange > .js-control__text.p-control__text .js-target__inner--pointer__stateChange.js-target__parent--spring{
+    content: '\21E8' !important;
+    font-size: 30px;
+}
+
+.p-control__btn.prev.js-target--pointer__stateChange > .js-control__text.p-control__text .js-target__inner--pointer__stateChange.js-target__parent--spring{
+    content: '\21E8' !important;
+    font-size: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+  .lng-box{
+      font-size: 10px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+  }
 }

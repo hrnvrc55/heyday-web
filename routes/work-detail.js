@@ -6,12 +6,13 @@ var router = express.Router();
 /* GET home page. */
 router.get('/:slug', async function(req, res, next) {
     await Promise.all([
-        axios.get(`/about/general`),
+        axios.get(`/about/general`,{headers:{"Accept-Language": req.cookies.lng ? req.cookies.lng : "" }}),
         axios.get(`/about/owner`),
         axios.get(`/about/awards`),
-        axios.get(`/slider/all`),
+        axios.get(`/slider/all`,{headers:{"Accept-Language": req.cookies.lng ? req.cookies.lng : "" }}),
         axios.get('/options/get'),
-        axios.get(`/work/get-with-slug?slug=${req.params.slug}`)
+        axios.get(`/work/get-with-slug?slug=${req.params.slug}`,{headers:{"Accept-Language": req.cookies.lng ? req.cookies.lng : "" }}),
+        axios.get('/options/website-statics',{headers:{"Accept-Language": req.cookies.lng ? req.cookies.lng : "" }})
 
     ]).then(resp => {
         const {description, contactEmail, workTogetherEmail,phoneNumber,faxNumber,established,principal,locationLink,address,companyName} = resp[0].data.result;
@@ -26,6 +27,8 @@ router.get('/:slug', async function(req, res, next) {
         const logo = resp[4].data.result.logo;
         const webSiteTitle = resp[4].data.result.title
         let detail = resp[5].data.result;
+        const staticList = resp[6].data;
+
         const responseData = {
             description,
             contactEmail,
@@ -43,7 +46,8 @@ router.get('/:slug', async function(req, res, next) {
             sliders,
             webSiteTitle,
             logo,
-            detail
+            detail,
+            staticList
         }
         res.render('work-detail', responseData);
     }).catch(err => {

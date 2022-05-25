@@ -18,9 +18,13 @@
 
 
     <link href="assets/css/bundle.css.pagespeed.ce.gkyqQvW_3m.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+
 </head>
 <body class="is-ready">
 <div id="wrapper">
+    <%- include("lng-box"); %>
+
     <%- include("header", {logo: logo, staticList: staticList}); %>
 
     <div class="l-navSp b-fonts__medium js-nav">
@@ -82,7 +86,7 @@
                             <section class="p-about__section p-about__award js-target--indicator"><p
                                         class="p-about__section__num b-fonts__medium">03</p>
                                 <div class="p-about__section__head"><h1 class="p-about__section__title b-fonts__medium">
-                                        Award</h1></div>
+                                        <%= staticList["Award"] %></h1></div>
                                 <div class="p-about__section__body js-award">
                                     <dl>
                                         <% awardsList.forEach(function(item) { %>
@@ -142,7 +146,7 @@
                                             </div>
                                             <div class="c-grid">
                                                 <dt class="p-about__weAre__dt p-about__dt c-grid__head"><p
-                                                            class="p-about__section__description"><%= staticList["Fax"] %></p></dt>
+                                                            class="p-about__section__description"><%= staticList["Mobile"] %></p></dt>
                                                 <dd class="c-grid__body p-about__dd p-about__weAre__dd"><p
                                                             class="p-about__section__description"><span class="text"><%= faxNumber %></span>
                                                     </p></dd>
@@ -267,7 +271,7 @@
                             <section
                                     class="p-about__contact__section js-target--sideFixPosition p-about__section js-target--indicator">
                                 <p class="p-about__section__num b-fonts__medium">05</p>
-                                <h1 class="p-about__section__title p-about__contact__title b-fonts__medium">Hire Us</h1>
+                                <h1 class="p-about__section__title p-about__contact__title b-fonts__medium"><%= staticList["Hire Us"] %></h1>
                                 <div class="p-about__contact__line">
                                     <div class="p-about__contact__line__outer">
                                         <div class="p-about__contact__line__inner"></div>

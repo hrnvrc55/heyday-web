@@ -7,10 +7,10 @@ const moment = require('moment');
 router.get('/', async function(req, res, next) {
 
    await Promise.all([
-       axios.get(`/about/general`),
-       axios.get(`/about/owner`),
+       axios.get(`/about/general`,{headers:{"Accept-Language": req.cookies.lng ? req.cookies.lng : "" }}),
+       axios.get(`/about/owner`,{headers:{"Accept-Language": req.cookies.lng ? req.cookies.lng : "" }}),
        axios.get(`/about/awards`),
-       axios.get(`/slider/all`),
+       axios.get(`/slider/all`,{headers:{"Accept-Language": req.cookies.lng ? req.cookies.lng : "" }}),
        axios.get('/options/get'),
        axios.get('/options/website-statics',{headers:{"Accept-Language": req.cookies.lng ? req.cookies.lng : "" }})
 
