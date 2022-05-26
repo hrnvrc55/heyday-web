@@ -12,7 +12,8 @@ router.get('/', async function(req, res, next) {
        axios.get(`/about/awards`),
        axios.get(`/slider/all`,{headers:{"Accept-Language": req.cookies.lng ? req.cookies.lng : "" }}),
        axios.get('/options/get'),
-       axios.get('/options/website-statics',{headers:{"Accept-Language": req.cookies.lng ? req.cookies.lng : "" }})
+       axios.get('/options/website-statics',{headers:{"Accept-Language": req.cookies.lng ? req.cookies.lng : "" }}),
+       axios.get('/meta-options/get')
 
    ]).then(resp => {
        const {title, description, contactEmail, workTogetherEmail,phoneNumber,faxNumber,established,principal,locationLink,address,companyName} = resp[0].data.result;
@@ -27,6 +28,8 @@ router.get('/', async function(req, res, next) {
        const logo = resp[4].data.result.logo;
        const webSiteTitle = resp[4].data.result.title;
        const staticList = resp[5].data;
+       const metaDescription = resp[6].data.result ? resp[6].data.result.aboutMetaDescription : ''
+
        const responseData = {
            title,
            description,
@@ -45,7 +48,8 @@ router.get('/', async function(req, res, next) {
            sliders,
            webSiteTitle,
            logo,
-           staticList
+           staticList,
+           metaDescription
        }
        res.render('about', responseData);
     }).catch(err => {
