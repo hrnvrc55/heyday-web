@@ -16,7 +16,7 @@ router.get('/', async function(req, res, next) {
        axios.get('/meta-options/get')
 
    ]).then(resp => {
-       const {title, description, contactEmail, workTogetherEmail,phoneNumber,faxNumber,established,principal,locationLink,address,companyName} = resp[0].data.result;
+       const {title,instagram,facebook,linkedin, description, contactEmail, workTogetherEmail,phoneNumber,faxNumber,established,principal,locationLink,address,companyName} = resp[0].data.result;
        const ownerName = resp[1].data.result.name;
        const ownerDescription = resp[1].data.result.description;
        const awards = resp[2].data.result;
@@ -49,7 +49,10 @@ router.get('/', async function(req, res, next) {
            webSiteTitle,
            logo,
            staticList,
-           metaDescription
+           metaDescription,
+           instagram,
+           linkedin,
+           facebook
        }
        res.render('about', responseData);
     }).catch(err => {

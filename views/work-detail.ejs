@@ -240,6 +240,26 @@
                                     class="js-target__inner--pointer__stateChange c-link--underline__inner"><%= workTogetherEmail %><span
                                         class="c-link--underline__line"></span></span></a></dd>
                 </div>
+                <div class="p-sideContact__unit">
+                    <div>
+                        <% if(instagram) { %>
+                            <a href="<%= instagram %>" target="_blank">
+                                <img src="../assets/social/instagram.png" width="30">
+                            </a>
+                        <% } %>
+                        <% if(facebook) { %>
+                            <a href="<%= facebook %>" target="_blank">
+                                <img src="../assets/social/facebook.png" width="30">
+                            </a>
+                        <% } %>
+                        <% if(linkedin) { %>
+                            <a href="<%= linkedin %>" target="_blank">
+                                <img src="../assets/social/linkedin.png" width="30">
+                            </a>
+                        <% } %>
+
+                    </div>
+                </div>
             </dl>
         </address>
     </aside>

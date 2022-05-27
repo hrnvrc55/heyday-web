@@ -15,7 +15,7 @@ router.get('/:slug', async function(req, res, next) {
         axios.get('/options/website-statics',{headers:{"Accept-Language": req.cookies.lng ? req.cookies.lng : "" }})
 
     ]).then(resp => {
-        const {description, contactEmail, workTogetherEmail,phoneNumber,faxNumber,established,principal,locationLink,address,companyName} = resp[0].data.result;
+        const {description, contactEmail, instagram, facebook, linkedin, workTogetherEmail,phoneNumber,faxNumber,established,principal,locationLink,address,companyName} = resp[0].data.result;
         const ownerName = resp[1].data.result.name;
         const ownerDescription = resp[1].data.result.description;
         const awards = resp[2].data.result;
@@ -47,7 +47,10 @@ router.get('/:slug', async function(req, res, next) {
             webSiteTitle,
             logo,
             detail,
-            staticList
+            staticList,
+            instagram,
+            facebook,
+            linkedin
         }
         res.render('work-detail', responseData);
     }).catch(err => {
