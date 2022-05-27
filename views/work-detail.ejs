@@ -11,8 +11,6 @@
     <meta name="viewport" content="initial-scale=1.0,minimum-scale=1,maximum-scale=5">
     <meta name="format-detection" content="telephone=no">
     <title><%= webSiteTitle %> - <%= detail["title"] %></title>
-    <meta name="author" content="https://asmobius.co.jp">
-    <meta name="copyright" content="ARCHI SITE MOBIUS">
     <link rel="apple-touch-icon" sizes="180x180"
           href="../../assets/favicons/apple-touch-icon.png.pagespeed.ce.1hIS37_TR-.png">
     <link rel="icon" type="image/png" sizes="16x16"
@@ -24,10 +22,16 @@
     <meta name="msapplication-TileColor" content="#252525">
     <meta name="theme-color" content="#ffffff">
     <meta property="og:type" content="website">
+    <meta name="description"
+          content="<%= detail["metaDescription"] %>">
     <link rel="stylesheet" href="../../assets/css/bundle.css">
+    <link href="assets/css/custom.css" rel="stylesheet">
+
 </head>
 <body class="is-ready">
 <div id="wrapper">
+    <%- include("lng-box"); %>
+
     <header class="l-header js-header b-fonts__medium">
         <div class="p-header l-wide-container">
             <div class="p-header__left js-logo">
@@ -84,18 +88,18 @@
                         <div class="p-header__list__item__inner--works">
                             <div class="p-header__list__item--all"><a
                                         class="js-nav__link js-target--pointer__stateChange" href="/works"><span
-                                            class="js-target__inner--pointer__stateChange js-target__parent--spring">All</span></a>
+                                            class="js-target__inner--pointer__stateChange js-target__parent--spring"><%= staticList["All"] %></span></a>
                             </div>
                             <div class="p-header__list__item--focus"><a
                                         class="js-nav__link js-target--pointer__stateChange" href="/"><span
-                                            class="js-target__inner--pointer__stateChange js-target__parent--spring">Focus</span></a>
+                                            class="js-target__inner--pointer__stateChange js-target__parent--spring"><%= staticList["Focus"] %></span></a>
                             </div>
                         </div>
                     </li>
                     <li class="p-header__list__item has-children"><a
                                 class="js-nav__link js-target--pointer__stateChange about"
                                 href="/about"><span
-                                    class="js-target__inner--pointer__stateChange js-target__parent--spring">About</span></a>
+                                    class="js-target__inner--pointer__stateChange js-target__parent--spring"><%= staticList["About"] %></span></a>
                         <div class="p-header__list__item__inner">
                             <ul class="p-header__languageList" style="display: none;">
                                 <li class="p-header__languageList__item"><a
@@ -186,11 +190,33 @@
                                         </li>
                                         <% }) %>
                                         <% } %>
+                                            <li class="js-target--imageZoom p-works-detail__list__item js-target--indicator js-transition__list__item js-target--pointer__stateChange">
+                                                <div style="overflow:hidden;" class="p-works-detail__opacity"
+                                                     data-image-zoom="../../asm_cp/wp-content/uploads/2020/01/01-conceptj2.png">
+                                                    <div class="inner" style="pointer-events: none;">
+                                                        <div class="js-parent--parallax">
+                                                            <div class="p-works-detail__list__item__inner">
+                                                                <div class="js-target--parallax">
+                                                                    <div>
+                                                                        <div class="img">
+                                                                            <div style="padding: 8%;">
+                                                                                <%- detail["description"]%>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
                                     </ul>
+
                                 </div>
                             </div>
                         </div>
                     </section>
+
                 </article>
             </div>
         </div>
@@ -213,6 +239,26 @@
                            href="mailto:<%= workTogetherEmail %>"><span
                                     class="js-target__inner--pointer__stateChange c-link--underline__inner"><%= workTogetherEmail %><span
                                         class="c-link--underline__line"></span></span></a></dd>
+                </div>
+                <div class="p-sideContact__unit">
+                    <div>
+                        <% if(instagram) { %>
+                            <a href="<%= instagram %>" target="_blank">
+                                <img src="../assets/social/instagram.png" width="30">
+                            </a>
+                        <% } %>
+                        <% if(facebook) { %>
+                            <a href="<%= facebook %>" target="_blank">
+                                <img src="../assets/social/facebook.png" width="30">
+                            </a>
+                        <% } %>
+                        <% if(linkedin) { %>
+                            <a href="<%= linkedin %>" target="_blank">
+                                <img src="../assets/social/linkedin.png" width="30">
+                            </a>
+                        <% } %>
+
+                    </div>
                 </div>
             </dl>
         </address>

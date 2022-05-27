@@ -4,14 +4,17 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', async function(req, res, next) {
-await Promise.all([
-    axios.get(`/slider/all`),
-    axios.get(`/about/general`),
-    axios.get('/options/get')
+
+    await Promise.all([
+    axios.get(`/slider/all`,{headers:{"Accept-Language": req.cookies.lng ? req.cookies.lng : "" }}),
+    axios.get(`/about/general`,{headers:{"Accept-Language": req.cookies.lng ? req.cookies.lng : "" }}),
+    axios.get('/options/get'),
+    axios.get('/options/website-statics',{headers:{"Accept-Language": req.cookies.lng ? req.cookies.lng : "" }}),
+    axios.get('/meta-options/get')
 ]).then(resp => {
-    console.log(resp[0].data.result, 'RESULT');
     const {logo, title} = resp[2].data.result;
-    res.render('index', { sliders: resp[0].data.result, general: resp[1].data.result, logo, title });
+    const metaDescription = resp[4].data.result ? resp[4].data.result.mainMetaDescription : ''
+    res.render('index', {metaDescription,sliders: resp[0].data.result, general: resp[1].data.result, logo, title, staticList: resp[3].data });
 })
 });
 
