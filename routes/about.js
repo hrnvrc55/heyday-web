@@ -29,6 +29,7 @@ router.get('/', async function(req, res, next) {
        const webSiteTitle = resp[4].data.result.title;
        const staticList = resp[5].data;
        const metaDescription = resp[6].data.result ? resp[6].data.result.aboutMetaDescription : ''
+       const pinterestCode = resp[6].data.result ? resp[6].data.result.pinterestCode : ''
 
        const responseData = {
            title,
@@ -52,7 +53,8 @@ router.get('/', async function(req, res, next) {
            metaDescription,
            instagram,
            linkedin,
-           facebook
+           facebook,
+           pinterestCode
        }
        res.render('about', responseData);
     }).catch(err => {
