@@ -15,7 +15,7 @@ router.get('/', async function(req, res, next) {
     const {logo, title} = resp[2].data.result;
     const metaDescription = resp[4].data.result ? resp[4].data.result.mainMetaDescription : ''
     const pinterestCode = resp[4].data.result ? resp[4].data.result.pinterestCode : ''
-    res.render('index', {metaDescription, pinterestCode, sliders: resp[0].data.result, general: resp[1].data.result, logo, title, staticList: resp[3].data });
+    res.render('index', {lng: req.cookies.lng,metaDescription, pinterestCode, sliders: resp[0].data.result, general: resp[1].data.result, logo, title, staticList: resp[3].data });
 })
 });
 

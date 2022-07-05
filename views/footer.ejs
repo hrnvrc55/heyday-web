@@ -91,3 +91,24 @@
 <script defer="" src="assets/js/vendor.bundle.js"></script>
 <script defer="" src="assets/js/app.bundle.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.addEventListener('click', (event) => {
+            const parser = document.createElement('a');
+            parser.href = window.location.href;
+            const lngBox = document.querySelector('.lng-box');
+            const lngBoxMobile = document.querySelector('.lng-box-mobile');
+
+            if(parser.pathname !== '/'){
+                lngBox.style.display = "none";
+                lngBoxMobile.style.display ="none";
+            }else{
+                lngBox.style.display = "";
+                lngBoxMobile.style.display ="";
+
+            }
+        })
+
+    });
+
+</script>

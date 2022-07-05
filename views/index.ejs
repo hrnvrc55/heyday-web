@@ -27,6 +27,9 @@
 <body class="is-ready">
 <div id="wrapper">
     <%- include("header", {logo: logo, staticList: staticList}); %>
+    <%- include("lng-box",{lng: lng}); %>
+    <%- include("lng-box-mobile",{lng: lng}); %>
+
     <div class="l-navSp b-fonts__medium js-nav">
         <div class="p-navSp">
             <div class="p-header__list__item__inner--works">
@@ -85,6 +88,7 @@
         </address>
     </aside>
     <div class="p-stage" id="stage">
+
         <div id="app-canvas"></div>
         <ul class="p-stage__menu">
             <% sliders.forEach(function(item) { %>
