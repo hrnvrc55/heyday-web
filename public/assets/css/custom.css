@@ -31,7 +31,7 @@
 .lng-box{
     position: absolute;
     z-index: 99;
-    bottom: calc(6.25vw - 13px);
+    bottom: calc(7.35vw - 13px);
     left: 4%;
 }
 
