@@ -49,34 +49,32 @@
                         <div class="p-about__inner">
                             <section class="p-about__section js-target--indicator first"><p
                                         class="p-about__section__num b-fonts__medium">01</p>
-                                <div class="p-about__section__head"><h1
-                                            class="p-about__section__title p-about__section__title--first b-fonts__medium">
-                                        <span class="u-block u-line js-target--split"><%= title %></span></h1></div>
+                                        <div class="">
+                                            <a class="js-target--pointer__stateChange" href="/" style="display: inline-block">
+                                                <div class="js-target__inner--pointer__stateChange js-target__parent--spring">
+                                                    <img src="<%= logo %>" width="200" style="padding:1rem"/>
+                                                </div>
+                                            </a></div>
                                 <div class="p-about__section__body">
-                                    <div lang="en"><p class="p-about__section__description lang-fonts--en"><%- description %></p></div>
-                                    <div lang="zh-cmn-Hans" style="display: none;"><p
-                                                class="p-about__section__description lang-fonts--zh-cmn-Hans">
-                                            我们追求的建筑是向空间索求寂静的建筑。<br>我们敬爱的建筑家路易斯・巴拉甘说道：" 寂静可真正地去慰籍苦恼，退却恐惧。<br>无论何等豪宅大厦，或微不足道的草庐茅舍，建造一处充满寂静的住宅是建筑师的使命。<br>我们所经手的的建筑空间将一如既往地体现静寂中的美丽与舒适，从而激发住客的灵感，慰籍住客的心灵。我们同时还将建筑领域的环保问题纳入主题，在建筑手法上采用可持续性设计，在实践中追求建筑本身的不随时代而褪色的经典性以及高度耐久性。
-                                        </p></div>
-                                    <div lang="ja"><p class="p-about__section__description lang-fonts--ja">
-                                            私たちの目指す建築は空間に静寂を求める事です。<br>敬愛する建築家ルイス・バラガンの言葉に「静けさは、苦悩や恐れを真の意味で癒します。<br>どんな豪邸や、あるいはささやかな住宅であろうと静けさに満ち溢れた住まいを造る事は建築家の使命なのです。」<br>静寂の中の美しさ快適さを表現し利用される方々の感性を刺激し癒す建築空間を提供し続けます。同時に建築における環境問題もテーマとしサスティナブルデザインの建築的手法を踏まえ建築物が時代に流される事のない高耐久化を実践しようと考えています。
-                                        </p></div>
+                                    <div lang="en" class="p_about_descs">
+                                        <p class="p-about__section__descriptions"><%- description %></p>
+                                    </div>
                                 </div>
                             </section>
                             <section class="p-about__section js-target--indicator" ><p
                                         class="p-about__section__num b-fonts__medium">02</p>
-                                <div class="p-about__section__head"><h1 class="p-about__section__title b-fonts__medium">
+                                <div class="p-about__section__head"><h1 class="p-about__section__titles b-fonts__medium">
                                        <%= ownerName %></h1></div>
                                 <div class="p-about__section__body">
                                     <dl>
-                                        <div class="c-grid">
+                                        <div class="c-grid p_about_descs">
                                             <dt class="c-grid__head" style="display: none;">
                                                 <div class="p-about__thumb">
                                                     <div class="p-about__thumb__inner js-target--parallax"></div>
                                                 </div>
                                             </dt>
                                             <dd class="c-grid__foot">
-                                            <p class="p-about__section__description lang-fonts--en" lang="en">
+                                            <p class="p-about__section__descriptions" lang="en">
                                             <%- ownerDescription %>
                                             </p>
                                             </dd>
@@ -86,7 +84,7 @@
                             </section>
                             <section class="p-about__section p-about__award js-target--indicator"><p
                                         class="p-about__section__num b-fonts__medium">03</p>
-                                <div class="p-about__section__head"><h1 class="p-about__section__title b-fonts__medium">
+                                <div class="p-about__section__head"><h1 class="p-about__section__titles b-fonts__medium">
                                         <%= staticList["Award"] %></h1></div>
                                 <div class="p-about__section__body js-award">
                                     <dl>
@@ -107,8 +105,8 @@
                                         class="p-about__section__num b-fonts__medium">04</p>
                                 <div>
                                     <div class="p-about__section__head"><h1
-                                                class="p-about__section__title b-fonts__medium"><%= staticList["We Are"] %></h1></div>
-                                    <div class="p-about__section__body">
+                                                class="p-about__section__titles b-fonts__medium"><%= staticList["We Are"] %></h1></div>
+                                    <div class="p-about__section__body p_about_descs">
                                         <div class="p-about__weAre__content__head" lang="en"><p
                                                     class="p-about__section__description lang-fonts--en" lang="en"><span><%= companyName %></span><br><small></small>
                                             </p></div>
@@ -309,12 +307,15 @@
                 <div class="p-sideContact__unit">
                     <dt class="b-fonts__medium"><%= staticList["Work Together"] %>.</dt>
                     <dd><a class="js-target--pointer__stateChange lang-fonts--en c-link--underline js-hover"
-                           data-hover-in-time="1010" data-hover-out-time="850" href="mailto:<%=workTogetherEmail%>"><span
-                                    class="js-target__inner--pointer__stateChange c-link--underline__inner"><%= workTogetherEmail %><span
-                                        class="c-link--underline__line"></span></span></a></dd>
+                           data-hover-in-time="1010" data-hover-out-time="850" href="mailto:<%=workTogetherEmail%>">
+                        <span class="js-target__inner--pointer__stateChange c-link--underline__inner">
+                            <%= workTogetherEmail %>
+                            <span class="c-link--underline__line"></span>
+                        </span>
+                        </a>
+                    </dd>
                 </div>
                 <div class="p-sideContact__unit">
-                    <div>
                             <% if(instagram) { %>
                                 <a href="<%= instagram %>" target="_blank">
                                     <img src="../assets/social/instagram.png" width="30">
@@ -326,12 +327,11 @@
                                 </a>
                             <% } %>
                             <% if(linkedin) { %>
-                                <a href="<%= linkedin %>" target="_blank">
+                                <!-- <a href="<%= linkedin %>" target="_blank"> -->
                                 <img src="../assets/social/linkedin.png" width="30">
                                 </a>
                             <% } %>
 
-                    </div>
                 </div>
             </dl>
         </address>

@@ -17,7 +17,18 @@
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
+.p-about__section__descriptions{
+    font-family: Avenir;
+}
+.p-about__section__titles{
+    font-family: AmalineRegular;
+    font-size: 2.2rem;
+    letter-spacing: .1em;
+    line-height: 1;
+}
+.p_about_descs p{
+    font-family: "Avenir"
+}
 .p-control__btn.next.js-target--pointer__stateChange > .js-control__text.p-control__text .js-target__inner--pointer__stateChange.js-target__parent--spring{
     content: '\21E8' !important;
     font-size: 30px;
@@ -30,9 +41,10 @@
 
 .lng-box{
     position: absolute;
+    height: 30px;
     z-index: 99;
-    bottom: calc(6.8vw - 13px);
-    left: 4%;
+    bottom: calc(6.25vw - 13px);
+    right: 4%;
 }
 
 .lng-box-mobile{
