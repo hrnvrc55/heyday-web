@@ -33,6 +33,7 @@ app.use(cookieParser());
 app.use('/',cookieControl, indexRouter);
 app.use('/users',cookieControl, usersRouter);
 app.use('/works',cookieControl, worksRouter);
+app.use('/works/',cookieControl, worksRouter);
 app.use('/about',cookieControl, aboutRouter);
 app.use('/work-detail',cookieControl, workDetail);
 
