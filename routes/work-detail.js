@@ -12,8 +12,8 @@ router.get('/:slug', async function(req, res, next) {
         axios.get(`/slider/all`,{headers:{"Accept-Language": req.cookies.lng ? req.cookies.lng : "" }}),
         axios.get('/options/get'),
         axios.get(`/work/get-with-slug?slug=${req.params.slug}`,{headers:{"Accept-Language": req.cookies.lng ? req.cookies.lng : "" }}),
-        axios.get('/options/website-statics',{headers:{"Accept-Language": req.cookies.lng ? req.cookies.lng : "" }})
-
+        axios.get('/options/website-statics',{headers:{"Accept-Language": req.cookies.lng ? req.cookies.lng : "" }}),
+        axios.get(`/work/all`,{headers:{"Accept-Language": req.cookies.lng ? req.cookies.lng : "" }})
     ]).then(resp => {
         const {description, contactEmail, instagram, facebook, linkedin, workTogetherEmail,phoneNumber,faxNumber,established,principal,locationLink,address,companyName} = resp[0].data.result;
         const ownerName = resp[1].data.result.name;
@@ -28,6 +28,7 @@ router.get('/:slug', async function(req, res, next) {
         const webSiteTitle = resp[4].data.result.title
         let detail = resp[5].data.result;
         const staticList = resp[6].data;
+        const works = resp[7].data.result;
 
         const responseData = {
             description,
@@ -50,7 +51,8 @@ router.get('/:slug', async function(req, res, next) {
             staticList,
             instagram,
             facebook,
-            linkedin
+            linkedin,
+            works
         }
         res.render('work-detail', responseData);
     }).catch(err => {
