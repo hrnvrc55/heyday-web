@@ -268,13 +268,7 @@
             <% works.forEach(function(item) { %>
                 <li class=" js-canvas__target"
                     data-canvas-thumb="<%= item["image"] %>"
-                    data-canvas-url=
-                    "/work-detail/
-                    <% if(item["Work"]) { %>
-                        <%= item["Work"]["slug"] %>
-                        <% } else { %>
-                            '#'
-                        <% } %>"
+                    data-canvas-url="/work-detail/<% if(item["slug"]) { %><%= item["slug"] %><% } else { %>'#'<% } %>"
                     data-canvas-zoom="<%= item["image"] %>">
                     <h1 style="color: #D7BD9D; font-size: 40px;"><%= item["title"] %></h1>
                     <%= item["subTitle"] %>
