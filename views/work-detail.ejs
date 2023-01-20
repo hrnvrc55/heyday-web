@@ -129,25 +129,6 @@
                 </script>
                 <span id="birthdate"></span>
 
-                <script>
-                  var url_string = window.location.search;
-                  const parms = new URLSearchParams(url_string);
-                  var urlp = [];
-                  s = location.toString().split('?');
-                  s = s[1].split('&');
-                  for (i = 0; i < s.length; i++) {
-                    u = s[i].split('=');
-                    urlp[u[0]] = u[1];
-                  }
-                  document.getElementById("p").innerHTML = "urlp.title";
-                  document.write("214545454")
-                </script>
-
-
-
-
-           
-
                 <div style="position: relative">
                   <h1 class="p-works-detail__title js-work__title">
                     <span class="p-works-detail__title__inner js-work__title__inner">
@@ -161,10 +142,6 @@
                     </span>
                   </h1>
                 </div>
-
-
-
-
 
                 <div class="l-container p-info">
                   <p class="p-info__number js-transition__number js-target--split"><%=detail["updatedAt"]%></p>
