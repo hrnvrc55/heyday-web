@@ -26,9 +26,10 @@ router.get('/:slug', async function(req, res, next) {
         const sliders = resp[3].data.result;
         const logo = resp[4].data.result.logo;
         const webSiteTitle = resp[4].data.result.title
-        let detail = resp[5].data.result;
+        const detail = resp[5]?.data.result;
         const staticList = resp[6].data;
         const works = resp[7].data.result;
+        const url = req.originalUrl;
 
         const responseData = {
             description,
@@ -52,9 +53,12 @@ router.get('/:slug', async function(req, res, next) {
             instagram,
             facebook,
             linkedin,
-            works
+            works,
+            url
         }
+
         res.render('work-detail', responseData);
+
     }).catch(err => {
         res.render('error',{message: err.message})
     })
