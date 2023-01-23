@@ -30,7 +30,9 @@ router.get('/:slug', async function(req, res, next) {
         const staticList = resp[6].data;
         const works = resp[7].data.result;
         const url = req.originalUrl;
-
+        var index = works.findIndex(obj => obj.slug==detail.slug);
+        var thisPage = (works[index]);
+        var nextPage = (works[index+1] ? works[index+1] : works[0] );
         const responseData = {
             description,
             contactEmail,
@@ -54,8 +56,11 @@ router.get('/:slug', async function(req, res, next) {
             facebook,
             linkedin,
             works,
-            url
+            url,
+            nextPage,
+            thisPage
         }
+
 
         res.render('work-detail', responseData);
 

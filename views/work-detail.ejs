@@ -11,7 +11,7 @@
   <meta http-equiv="imagetoolbar" content="no">
   <meta name="viewport" content="initial-scale=1.0,minimum-scale=1,maximum-scale=5">
   <meta name="format-detection" content="telephone=no">
-  <title><%= webSiteTitle %> - <%= detail["title"] %></title>
+  <title><%= webSiteTitle %> - <%= thisPage["title"] %></title>
   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png.pagespeed.ce.1hIS37_TR-.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png.pagespeed.ce.LrUDEJtQ-b.png">
   <link rel="manifest" href="../../assets/favicons/site.webmanifest">
@@ -123,13 +123,8 @@
                 <div style="position: relative">
                   <h1 class="p-works-detail__title js-work__title">
                     <span class="p-works-detail__title__inner js-work__title__inner">
-                      <% 
-                      const params = decodeURI(url);
-                          var urlp=[];s=params.toString().split('?');s=s[1].split('&');for(i=0;i<s.length;i++){u=s[i].split('=');urlp[u[0]]=u[1];}
-                      if (1==1) { %>
-                        <h2><%= urlp.title %></h2>
-                        <% } %>
-                      <small><%= detail["subTitle"]%></small>
+                      <h2><%= thisPage.title %></h2>
+                      <small><%= thisPage["subTitle"]%></small>
                     </span>
                   </h1>
                 </div>
@@ -236,9 +231,12 @@
     <div id="stage" class="p-stage">
       <div id="app-canvas"></div>
       <ul class="p-stage__menu">
-        <li class=" js-canvas__target" data-canvas-thumb="<%= detail["image"] %>" data-canvas-url="/work-detail/<% if(detail["slug"]) { %><%= detail["slug"] %><% } else { %>'#'<% } %>?title=<% if(detail["slug"]) { %><%= detail["title"] %><% } else { %>'#'<% } %>&subTitle=<% if(detail["slug"]) { %><%= detail["subTitle"] %><% } else { %>'#'<% } %>" data-canvas-zoom="<%= detail["image"] %>">
-          <h1 style="color: #D7BD9D; font-size: 40px;"><%= detail["title"] %></h1>
-          <%= detail["subTitle"] %>
+        <% works.forEach(function(item) { %>
+        <li class=" js-canvas__target" data-canvas-thumb="<%= item["image"] %>" data-canvas-url="/work-detail/<% if(item["slug"]) { %><%= item["slug"] %><% } else { %>'#'<% } %>" data-canvas-zoom="<%= item["image"] %>">
+          <h1 style="color: #D7BD9D; font-size: 40px;"><%= item["title"] %></h1>
+          <%= item["subTitle"] %>
+        </li>
+        <% }); %>
         </li>
       </ul>
     </div>
