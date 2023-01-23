@@ -343,7 +343,7 @@
             <% sliders.forEach(function(item) { %>
                 <li class=" js-canvas__target"
                     data-canvas-thumb="<%= item["image"] %>"
-                    data-canvas-url="/work-detail/<% if(item["Work"]) { %><%= item["Work"]["slug"] %><% } else { %>'#'<% } %>"
+                    data-canvas-url="/work-detail/<% if(item["Work"]) { %><%= item["Work"]["slug"] %><% } else { %>'#'<% } %>?title=<% if(item["Work"]) { %><%= item["Work"]["title"] %><% } else { %>'#'<% } %>&subTitle=<% if(item["Work"]) { %><%= item["Work"]["subTitle"] %><% } else { %>'#'<% } %>"
                     data-canvas-zoom="<%= item["image"] %>">
                     <h1 style="color: #D7BD9D; font-size: 40px;"><%= item["title"] %></h1>
                     <%= item["subTitle"] %>
