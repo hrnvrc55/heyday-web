@@ -236,7 +236,7 @@
     <div id="stage" class="p-stage">
       <div id="app-canvas"></div>
       <ul class="p-stage__menu">
-        <li class=" js-canvas__target" data-canvas-thumb="<%= detail["image"] %>" data-canvas-url="/work-detail/<% if(detail["slug"]) { %><%= detail["slug"] %><% } else { %>'#'<% } %>" data-canvas-zoom="<%= detail["image"] %>">
+        <li class=" js-canvas__target" data-canvas-thumb="<%= detail["image"] %>" data-canvas-url="/work-detail/<% if(detail["slug"]) { %><%= detail["slug"] %><% } else { %>'#'<% } %>?title=<% if(detail["slug"]) { %><%= detail["title"] %><% } else { %>'#'<% } %>&subTitle=<% if(detail["slug"]) { %><%= detail["subTitle"] %><% } else { %>'#'<% } %>" data-canvas-zoom="<%= detail["image"] %>">
           <h1 style="color: #D7BD9D; font-size: 40px;"><%= detail["title"] %></h1>
           <%= detail["subTitle"] %>
         </li>
