@@ -37,7 +37,7 @@
                             class="js-nav__link js-target--pointer__stateChange" href="works"><span
                                 class="js-target__inner--pointer__stateChange js-target__parent--spring"><%= staticList["All"] %></span></a></div>
                 <div class="p-header__list__item--focus p-navSp__item"><a
-                            class="js-nav__link js-target--pointer__stateChange" href="/"><span
+                            class="js-nav__link js-target--pointer__stateChange" href="/#"><span
                                 class="js-target__inner--pointer__stateChange js-target__parent--spring"><%= staticList["Focus"] %></span></a></div>
             </div>
         </div>
@@ -129,16 +129,13 @@
     </aside>
     <div class="p-stage" id="stage">
         <div id="app-canvas"></div>
-        <ul class="p-stage__menu">
-            <% sliders.forEach(function(item) { %>
-                <li class=" js-canvas__target"
-                    data-canvas-thumb="<%= item["image"] %>"
-                    data-canvas-url="/work-detail/<% if(item["Work"]) { %><%= item["Work"]["slug"] %><% } else { %>'#'<% } %>"
-                    data-canvas-zoom="<%= item["image"] %>">
-                    <h1 style="color: #D7BD9D; font-size: 40px;"><%= item["title"] %></h1>
-                    <%= item["subTitle"] %>
-                </li>
-            <% }); %>
+        <ul class="p-stage__menu">                
+            <li class=" js-canvas__target"
+                    data-canvas-thumb=""
+                    data-canvas-url="/works"
+                    data-canvas-zoom="">
+                    <h1 style="color: #D7BD9D; font-size: 40px;"><%= loadingText %> </h1>
+            </li>
         </ul>
     </div>
     <div id="indicator">

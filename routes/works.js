@@ -14,10 +14,11 @@ router.get('/', async function(req, res, next) {
 
     ]).then(resp => {
         const {title, logo} = resp[3].data.result;
+        const loadingText = resp[3].data.result.loadingText;
         const metaDescription = resp[5].data.result ? resp[5].data.result.worksMetaDescription : ''
         const pinterestCode = resp[5].data.result ? resp[5].data.result.pinterestCode : ''
 
-        res.render('works', {metaDescription,pinterestCode, works: resp[0].data.result, sliders: resp[1].data.result, general: resp[2].data.result, logo, title, staticList: resp[4].data });
+        res.render('works', {metaDescription,pinterestCode, works: resp[0].data.result, sliders: resp[1].data.result, general: resp[2].data.result, logo, title, staticList: resp[4].data,loadingText });
     })
 });
 

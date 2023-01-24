@@ -12146,9 +12146,10 @@
                       e._onUpdate(t);
                     }),
                     (this.canParallaxUpdate = !0),
+                    
                     "list" === PROJECT.worksMode
                       ? this.$worksDetailClose.setAttribute("href", "/works/")
-                      : this.$worksDetailClose.setAttribute("href", "/");
+                      : this.$worksDetailClose.setAttribute("href", "/works/");
                 },
               },
               {

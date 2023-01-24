@@ -1549,7 +1549,7 @@ body.page-top .p-loading__bg {
 
 .p-loading {
     position: fixed;
-    z-index: 150;
+    z-index: -1;
     overflow: hidden;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
@@ -1577,7 +1577,7 @@ body.page-top .p-loading__bg {
     top: 0;
     left: 0;
     background-color: #1a1a1a;
-    z-index: 110
+    z-index: -1;
 }
 
 .p-loading__inner {
@@ -1590,7 +1590,7 @@ body.page-top .p-loading__bg {
     transform: translate3d(0, -50%, 1px);
     opacity: 0;
     overflow: hidden;
-    z-index: 170
+    z-index: -1;
 }
 
 .p-loading__inner,

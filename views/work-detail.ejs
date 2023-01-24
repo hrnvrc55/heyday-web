@@ -33,13 +33,13 @@
     <header class="l-header js-header b-fonts__medium">
       <div class="p-header l-wide-container">
         <div class="p-header__left js-logo">
-          <div class="p-header__left__inner"><a class="js-target--pointer__stateChange" href="/">
-              <div class="js-target__inner--pointer__stateChange js-target__parent--spring">
+          <div class="p-header__left__inner"><a class="js-target--pointer__stateChange" href="/#">
+              <div class="">
                 <img src="<%= logo %>" width="200" />
               </div>
             </a>
           </div>
-          <a href="/" class="p-header__close c-btn--close js-target__aboutClose js-target--pointer__stateChange js-hover" data-hover-in-time="1200" data-hover-out-time="100">
+          <a href="/works" class="p-header__close c-btn--close js-target__aboutClose js-target--pointer__stateChange js-hover" data-hover-in-time="1200" data-hover-out-time="100" data-hover-num="0">
             <div class="c-btn--close__layer front js-target__inner--pointer__stateChange js-target__parent--spring">
               <div class="c-btn--close__bar">
                 <div class="c-btn--close__bar__inner js-closeBar"></div>
@@ -58,7 +58,7 @@
             </div>
           </a>
         </div>
-        <a href="/" class="p-header__close--works-detail c-btn--close js-target__worksDetailClose js-target--pointer__stateChange js-hover" data-hover-in-time="1200" data-hover-out-time="100" data-hover-num="0">
+        <a href="/works" class="p-header__close--works-detail c-btn--close js-target__worksDetailClose js-target--pointer__stateChange js-hover" data-hover-in-time="1200" data-hover-out-time="100" data-hover-num="0">
           <div class="c-btn--close__layer front js-target__inner--pointer__stateChange js-target__parent--spring">
             <div class="c-btn--close__bar">
               <div class="c-btn--close__bar__inner js-closeBar"></div>
@@ -107,7 +107,7 @@
       <div class="p-navSp">
         <div class="p-header__list__item__inner--works">
           <div class="p-header__list__item--all p-navSp__item"><a class="js-nav__link js-target--pointer__stateChange" href="/works"><span class="js-target__inner--pointer__stateChange js-target__parent--spring">All</span></a></div>
-          <div class="p-header__list__item--focus p-navSp__item"><a class="js-nav__link js-target--pointer__stateChange" href="/"><span class="js-target__inner--pointer__stateChange js-target__parent--spring">Focus</span></a></div>
+          <div class="p-header__list__item--focus p-navSp__item"><a class="js-nav__link js-target--pointer__stateChange" href="/#"><span class="js-target__inner--pointer__stateChange js-target__parent--spring">Focus</span></a></div>
         </div>
       </div>
     </div>
@@ -122,9 +122,13 @@
 
                 <div style="position: relative">
                   <h1 class="p-works-detail__title js-work__title">
+                   
+
                     <span class="p-works-detail__title__inner js-work__title__inner">
-                      <h2><%= thisPage.title %></h2>
-                      <small><%= thisPage["subTitle"]%></small>
+                      <span style="transform: initialinitial;text-align: center;">
+                        <p style="color: #D7BD9D; font-size: 40px;">Occidental Taksim</p><p>Barcelo Hotel Group</p>
+                        
+                      </span>
                     </span>
                   </h1>
                 </div>
@@ -231,12 +235,9 @@
     <div id="stage" class="p-stage">
       <div id="app-canvas"></div>
       <ul class="p-stage__menu">
-        <% works.forEach(function(item) { %>
-        <li class=" js-canvas__target" data-canvas-thumb="<%= item["image"] %>" data-canvas-url="/work-detail/<% if(item["slug"]) { %><%= item["slug"] %><% } else { %>'#'<% } %>" data-canvas-zoom="<%= item["image"] %>">
-          <h1 style="color: #D7BD9D; font-size: 40px;"><%= item["title"] %></h1>
-          <%= item["subTitle"] %>
+        <li class=" js-canvas__target" data-canvas-thumb="" data-canvas-url="/works" data-canvas-zoom="">
+          <h1 style="color: #D7BD9D; font-size: 40px;"><%= loadingText %></h1>
         </li>
-        <% }); %>
         </li>
       </ul>
     </div>
