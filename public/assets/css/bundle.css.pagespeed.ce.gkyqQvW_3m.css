@@ -1539,25 +1539,33 @@ body.is-image-zoom .p-chasePointer__bar__inner:nth-of-type(2) {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 body.index .p-loading {
     z-index: -1
 }
 
-body.page-top .p-loading__bg {
-    background-color: #252525
-}
 
 .p-loading {
     position: fixed;
-    z-index: -1;
+    z-index: 150;
     overflow: hidden;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     transform-origin: bottom left
 }
 
-.p-loading,
-.p-loading__outer {
+.p-loading,.p-loading__outer {
     width: 100%;
     height: 100%;
     top: 0;
@@ -1576,8 +1584,7 @@ body.page-top .p-loading__bg {
     height: 100%;
     top: 0;
     left: 0;
-    background-color: #1a1a1a;
-    z-index: -1;
+    z-index: 110
 }
 
 .p-loading__inner {
@@ -1586,15 +1593,14 @@ body.page-top .p-loading__bg {
     right: 0;
     left: 0;
     margin: 0 auto;
-    -webkit-transform: translate3d(0, -50%, 1px);
-    transform: translate3d(0, -50%, 1px);
+    -webkit-transform: translate3d(0,-50%,1px);
+    transform: translate3d(0,-50%,1px);
     opacity: 0;
     overflow: hidden;
-    z-index: -1;
+    z-index: 170
 }
 
-.p-loading__inner,
-.p-loading__logo {
+.p-loading__inner,.p-loading__logo {
     width: 21.25vw;
     height: 13.125vw;
     max-width: 340px;
@@ -1616,6 +1622,17 @@ body.page-top .p-loading__bg {
 .p-loading__front {
     overflow: hidden
 }
+
+
+
+
+
+
+
+
+
+
+
 
 body.is-ready .js-canvas__info,
 body.is-ready .l-navSp,
