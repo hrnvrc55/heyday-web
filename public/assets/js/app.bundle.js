@@ -13410,7 +13410,7 @@
                                             domProps: {
                                               innerHTML: e._s(
 
-                                                (APP.controllerManager._controllers[0].info.path.includes("/works") === true) 
+                                                (APP.controllerManager._controllers[0].info.path.includes("/works")) 
                                                   ? '<h1 style="color: #D7BD9D; font-size: 40px;">Heyday Interiors </h1> '
                                                   :  e.slideTitle[e.slideNumState.current]
                                                 ),
