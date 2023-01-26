@@ -13,7 +13,6 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var worksRouter = require('./routes/works');
 var workDetail = require('./routes/work-detail');
-
 var aboutRouter = require('./routes/about');
 
 axios.defaults.baseURL = process.env.API_URL;
@@ -35,6 +34,7 @@ app.use('/users',cookieControl, usersRouter);
 app.use('/works',cookieControl, worksRouter);
 app.use('/works/',cookieControl, worksRouter);
 app.use('/about',cookieControl, aboutRouter);
+app.use('/about/',cookieControl, aboutRouter);
 app.use('/work-detail',cookieControl, workDetail);
 
 

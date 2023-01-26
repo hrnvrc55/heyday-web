@@ -1,373 +1,277 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    <meta content="no" http-equiv="imagetoolbar">
-    <meta content="initial-scale=1.0,minimum-scale=1,maximum-scale=5" name="viewport">
-    <meta content="telephone=no" name="format-detection">
-    <title><%= webSiteTitle %> - About</title>
+  <meta charset="UTF-8">
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+  <meta content="no" http-equiv="imagetoolbar">
+  <meta content="initial-scale=1.0,minimum-scale=1,maximum-scale=5" name="viewport">
+  <meta content="telephone=no" name="format-detection">
+  <title><%= webSiteTitle %> - About</title>
 
-    <link href="../assets/favicons/favicon.png" rel="icon" sizes="16x16" type="image/png">
+  <link href="../assets/favicons/favicon.png" rel="icon" sizes="16x16" type="image/png">
 
-    <link href="stylesheets/style.css">
+  <link href="stylesheets/style.css">
 
-    <meta content="#252525" name="msapplication-TileColor">
-    <meta content="#ffffff" name="theme-color">
-    <meta content="website" property="og:type">
-    <meta name="description"
-          content="<%=metaDescription%>">
-    <meta name="p:domain_verify" content="<%=pinterestCode%>"/>
+  <meta content="#252525" name="msapplication-TileColor">
+  <meta content="#ffffff" name="theme-color">
+  <meta content="website" property="og:type">
+  <meta name="description" content="<%= metaDescription %>">
+  <meta name="p:domain_verify" content="<%= pinterestCode %>" />
 
-    <link href="assets/css/bundle.css.pagespeed.ce.gkyqQvW_3m.css" rel="stylesheet">
-    <link href="assets/css/custom.css" rel="stylesheet">
+  <link href="assets/css/bundle.css.pagespeed.ce.gkyqQvW_3m.css" rel="stylesheet">
+  <link href="assets/css/custom.css" rel="stylesheet">
+
 
 </head>
+
 <body class="is-ready">
-<div id="wrapper">
+  <div id="wrapper">
 
     <%- include("header", {logo: logo, staticList: staticList}); %>
 
     <div class="l-navSp b-fonts__medium js-nav">
-        <div class="p-navSp">
-            <div class="p-header__list__item__inner--works">
-                <div class="p-header__list__item--all p-navSp__item"><a
-                            class="js-nav__link js-target--pointer__stateChange" href="works"><span
-                                class="js-target__inner--pointer__stateChange js-target__parent--spring"><%= staticList["All"] %></span></a></div>
-                <div class="p-header__list__item--focus p-navSp__item"><a
-                            class="js-nav__link js-target--pointer__stateChange" href="/#"><span
-                                class="js-target__inner--pointer__stateChange js-target__parent--spring"><%= staticList["Focus"] %></span></a></div>
-            </div>
+      <div class="p-navSp">
+        <div class="p-header__list__item__inner--works">
+          <div class="p-header__list__item--all p-navSp__item"><a class="js-nav__link js-target--pointer__stateChange" href="works"><span class="js-target__inner--pointer__stateChange js-target__parent--spring"><%= staticList["All"] %></span></a></div>
+          <div class="p-header__list__item--focus p-navSp__item"><a class="js-nav__link js-target--pointer__stateChange" href="/#"><span class="js-target__inner--pointer__stateChange js-target__parent--spring"><%= staticList["All"] %></span></a></div>
         </div>
+      </div>
     </div>
     <main class="js-smooth-scroll-wrapper" id="page">
-        <div class="js-smooth-scroll-content" id="contents">
-            <div class="l-about page-content" id="about">
-                <div class="p-about">
-                    <div class="p-about__bg"></div>
-                    <div class="js-target--langContent">
-                        <div class="p-about__inner">
-                            <section class="p-about__section js-target--indicator first"><p
-                                        class="p-about__section__num b-fonts__medium">01</p>
-                                        <div class="">
-                                            <a class="js-target--pointer__stateChange" href="/#" style="display: inline-block">
-                                                <div class="js-target__inner--pointer__stateChange js-target__parent--spring">
-                                                    <img src="<%= logo %>" width="200" style="padding:1rem"/>
-                                                </div>
-                                            </a></div>
-                                <div class="p-about__section__body">
-                                    <div lang="en" class="p_about_descs">
-                                        <p class="p-about__section__descriptions"><%- description %></p>
-                                    </div>
-                                </div>
-                            </section>
-                            <section class="p-about__section js-target--indicator" ><p
-                                        class="p-about__section__num b-fonts__medium">02</p>
-                                <div class="p-about__section__head"><h1 class="p-about__section__titles b-fonts__medium">
-                                       <%= ownerName %></h1></div>
-                                <div class="p-about__section__body">
-                                    <dl>
-                                        <div class="c-grid p_about_descs">
-                                            <dt class="c-grid__head" style="display: none;">
-                                                <div class="p-about__thumb">
-                                                    <div class="p-about__thumb__inner js-target--parallax"></div>
-                                                </div>
-                                            </dt>
-                                            <dd class="c-grid__foot">
-                                            <p class="p-about__section__descriptions" lang="en">
-                                            <%- ownerDescription %>
-                                            </p>
-                                            </dd>
-                                        </div>
-                                    </dl>
-                                </div>
-                            </section>
-                            <section class="p-about__section p-about__award js-target--indicator"><p
-                                        class="p-about__section__num b-fonts__medium">03</p>
-                                <div class="p-about__section__head"><h1 class="p-about__section__titles b-fonts__medium">
-                                        <%= staticList["Award"] %></h1></div>
-                                <div class="p-about__section__body js-award">
-                                    <dl>
-                                        <% awardsList.forEach(function(item) { %>
-                                        <div class="c-grid lang-fonts--en" lang="en">
-                                            <dt class="p-about__award__dt p-about__dt c-grid__head"><p
-                                                        class="p-about__section__description"><%= item["dateText"] %></p></dt>
-                                            <dd class="c-grid__body p-about__dd p-about__award__dd"><p
-                                                        class="p-about__section__description"><span class="text"><%= item["description"] %></span>
-                                                    </p>
-                                            </dd>
-                                        </div>
-                                        <% }); %>
-                                    </dl>
-                                </div>
-                            </section>
-                            <section class="p-about__section p-about__weAre js-target--indicator"><p
-                                        class="p-about__section__num b-fonts__medium">04</p>
-                                <div>
-                                    <div class="p-about__section__head"><h1
-                                                class="p-about__section__titles b-fonts__medium"><%= staticList["We Are"] %></h1></div>
-                                    <div class="p-about__section__body p_about_descs">
-                                        <div class="p-about__weAre__content__head" lang="en"><p
-                                                    class="p-about__section__description lang-fonts--en" lang="en"><span><%= companyName %></span><br><small></small>
-                                            </p></div>
-                                        <dl class="lang-fonts--en" lang="en">
-                                            <div class="c-grid">
-                                                <dt class="p-about__weAre__dt p-about__dt c-grid__head"><p
-                                                            class="p-about__section__description"> <%= staticList["Established"] %></p></dt>
-                                                <dd class="c-grid__body p-about__dd p-about__weAre__dd"><p
-                                                            class="p-about__section__description"><span class="text"><%= established %></span>
-                                                    </p></dd>
-                                            </div>
-                                            <div class="c-grid">
-                                                <dt class="p-about__weAre__dt p-about__dt c-grid__head"><p
-                                                            class="p-about__section__description"><%= staticList["Principal"] %></p></dt>
-                                                <dd class="c-grid__body p-about__dd p-about__weAre__dd"><p
-                                                            class="p-about__section__description"><span class="text"><%= principal %></span>
-                                                    </p></dd>
-                                            </div>
-                                            <div class="c-grid">
-                                                <dt class="p-about__weAre__dt p-about__dt c-grid__head"><p
-                                                            class="p-about__section__description"><%= staticList["Location"] %></p></dt>
-                                                <dd class="c-grid__body p-about__dd p-about__weAre__dd"><p
-                                                            class="p-about__section__description"><a
-                                                                class="js-target--pointer__stateChange c-link--underline js-hover"
-                                                                data-hover-in-time="1010" data-hover-out-time="850"
-                                                                href="<%= locationLink %>" target="_blank"><span
-                                                                    class="text js-target__inner--pointer__stateChange c-link--underline__inner"><%= address %><span
-                                                                        class="c-link--underline__line"></span></span></a></p></dd>
-                                            </div>
-                                            <div class="c-grid">
-                                                <dt class="p-about__weAre__dt p-about__dt c-grid__head"><p
-                                                            class="p-about__section__description"><%= staticList["Tel"] %></p></dt>
-                                                <dd class="c-grid__body p-about__dd p-about__weAre__dd"><p
-                                                            class="p-about__section__description"><span class="text"><%= phoneNumber %></span>
-                                                    </p></dd>
-                                            </div>
-                                            <div class="c-grid">
-                                                <dt class="p-about__weAre__dt p-about__dt c-grid__head"><p
-                                                            class="p-about__section__description"><%= staticList["Mobile"] %></p></dt>
-                                                <dd class="c-grid__body p-about__dd p-about__weAre__dd"><p
-                                                            class="p-about__section__description"><span class="text"><%= faxNumber %></span>
-                                                    </p></dd>
-                                            </div>
-                                        </dl>
-                                        <div class="p-about__weAre__content__head" lang="zh-cmn-Hans" style="display: none;"><p
-                                                    class="p-about__section__description lang-fonts--zh-cmn-Hans"
-                                                    lang="zh-cmn-Hans"><span>ARCHI SITE MOBIUS CO., LTD.</span><br><small>建筑设计事务所
-                                                    (东京都知事登录第62121号) </small></p></div>
-                                        <dl class="lang-fonts--zh-cmn-Hans" lang="zh-cmn-Hans">
-                                            <div class="c-grid">
-                                                <dt class="p-about__weAre__dt p-about__dt c-grid__head"><p
-                                                            class="p-about__section__description">設立</p></dt>
-                                                <dd class="c-grid__body p-about__dd p-about__weAre__dd"><p
-                                                            class="p-about__section__description"><span
-                                                                class="text">1992年7月</span></p></dd>
-                                            </div>
-                                            <div class="c-grid">
-                                                <dt class="p-about__weAre__dt p-about__dt c-grid__head"><p
-                                                            class="p-about__section__description">代表者名</p></dt>
-                                                <dd class="c-grid__body p-about__dd p-about__weAre__dd"><p
-                                                            class="p-about__section__description"><span
-                                                                class="text">今井 敦</span></p></dd>
-                                            </div>
-                                            <div class="c-grid">
-                                                <dt class="p-about__weAre__dt p-about__dt c-grid__head"><p
-                                                            class="p-about__section__description">所在地</p></dt>
-                                                <dd class="c-grid__body p-about__dd p-about__weAre__dd"><p
-                                                            class="p-about__section__description"><a
-                                                                class="js-target--pointer__stateChange c-link--underline js-hover"
-                                                                data-hover-in-time="1010" data-hover-out-time="850"
-                                                                href="https://goo.gl/maps/EPvd5juRCsr" target="_blank"><span
-                                                                    class="text js-target__inner--pointer__stateChange c-link--underline__inner">東京都渋谷区広尾1-６-10 Giraffa 9F<span
-                                                                        class="c-link--underline__line"></span></span></a></p></dd>
-                                            </div>
-                                            <div class="c-grid">
-                                                <dt class="p-about__weAre__dt p-about__dt c-grid__head"><p
-                                                            class="p-about__section__description">電話</p></dt>
-                                                <dd class="c-grid__body p-about__dd p-about__weAre__dd"><p
-                                                            class="p-about__section__description"><span class="text">03-6408-9073</span>
-                                                    </p></dd>
-                                            </div>
-                                            <div class="c-grid">
-                                                <dt class="p-about__weAre__dt p-about__dt c-grid__head"><p
-                                                            class="p-about__section__description">FAX</p></dt>
-                                                <dd class="c-grid__body p-about__dd p-about__weAre__dd"><p
-                                                            class="p-about__section__description"><span class="text">03-5420-0503</span>
-                                                    </p></dd>
-                                            </div>
-                                        </dl>
-                                        <div class="p-about__weAre__content__head" lang="ja"><p
-                                                    class="p-about__section__description lang-fonts--ja" lang="ja"><span>アーキサイト メビウス 株式会社</span><br><small>建築設計事務所
-                                                    (東京都知事登録第62121号) </small></p></div>
-                                        <dl class="lang-fonts--ja" lang="ja">
-                                            <div class="c-grid">
-                                                <dt class="p-about__weAre__dt p-about__dt c-grid__head"><p
-                                                            class="p-about__section__description">設立</p></dt>
-                                                <dd class="c-grid__body p-about__dd p-about__weAre__dd"><p
-                                                            class="p-about__section__description"><span
-                                                                class="text">1992年7月</span></p></dd>
-                                            </div>
-                                            <div class="c-grid">
-                                                <dt class="p-about__weAre__dt p-about__dt c-grid__head"><p
-                                                            class="p-about__section__description">代表者名</p></dt>
-                                                <dd class="c-grid__body p-about__dd p-about__weAre__dd"><p
-                                                            class="p-about__section__description"><span
-                                                                class="text">今井 敦</span></p></dd>
-                                            </div>
-                                            <div class="c-grid">
-                                                <dt class="p-about__weAre__dt p-about__dt c-grid__head"><p
-                                                            class="p-about__section__description">所在地</p></dt>
-                                                <dd class="c-grid__body p-about__dd p-about__weAre__dd"><p
-                                                            class="p-about__section__description"><a
-                                                                class="js-target--pointer__stateChange c-link--underline js-hover"
-                                                                data-hover-in-time="1010" data-hover-out-time="850"
-                                                                href="https://goo.gl/maps/EPvd5juRCsr" target="_blank"><span
-                                                                    class="text js-target__inner--pointer__stateChange c-link--underline__inner">東京都渋谷区広尾1-6-10 Giraffa 9F<span
-                                                                        class="c-link--underline__line"></span></span></a></p></dd>
-                                            </div>
-                                            <div class="c-grid">
-                                                <dt class="p-about__weAre__dt p-about__dt c-grid__head"><p
-                                                            class="p-about__section__description">Tel</p></dt>
-                                                <dd class="c-grid__body p-about__dd p-about__weAre__dd"><p
-                                                            class="p-about__section__description"><span class="text">03-6408-9073</span>
-                                                    </p></dd>
-                                            </div>
-                                            <div class="c-grid">
-                                                <dt class="p-about__weAre__dt p-about__dt c-grid__head"><p
-                                                            class="p-about__section__description">Fax</p></dt>
-                                                <dd class="c-grid__body p-about__dd p-about__weAre__dd"><p
-                                                            class="p-about__section__description"><span class="text">03-5420-0503</span>
-                                                    </p></dd>
-                                            </div>
-                                        </dl>
-                                    </div>
-                                </div>
-                            </section>
-                            <section class="p-about__section p-about__subContact">
-                                <address>
-                                    <dl class="p-about__subContact__inner">
-                                        <div class="p-about__subContact__unit">
-                                            <dt class="b-fonts__medium"><%= staticList["Hello"] %>.</dt>
-                                            <dd>
-                                                <a class="js-target--pointer__stateChange lang-fonts--en c-link--underline js-hover"
-                                                   data-hover-in-time="1010" data-hover-out-time="850"
-                                                   href="mailto: <%= contactEmail %>"><span
-                                                            class="js-target__inner--pointer__stateChange c-link--underline__inner"><%= contactEmail %><span
-                                                                class="c-link--underline__line"></span></span></a></dd>
-                                        </div>
-                                        <div class="p-about__subContact__unit">
-                                            <dt class="b-fonts__medium"><%= staticList["Work Together"] %>.</dt>
-                                            <dd>
-                                                <a class="js-target--pointer__stateChange lang-fonts--en c-link--underline js-hover"
-                                                   data-hover-in-time="1010" data-hover-out-time="850"
-                                                   href="mailto:<%= workTogetherEmail %>"><span
-                                                            class="js-target__inner--pointer__stateChange c-link--underline__inner"><%= workTogetherEmail %><span
-                                                                class="c-link--underline__line"></span></span></a></dd>
-                                        </div>
-
-                                    </dl>
-                                </address>
-                            </section>
-                            <section
-                                    class="p-about__contact__section js-target--sideFixPosition p-about__section js-target--indicator">
-                                <p class="p-about__section__num b-fonts__medium">05</p>
-                                <h1 class="p-about__section__title p-about__contact__title b-fonts__medium"><%= staticList["Hire Us"] %></h1>
-                                <div class="p-about__contact__line">
-                                    <div class="p-about__contact__line__outer">
-                                        <div class="p-about__contact__line__inner"></div>
-                                    </div>
-                                </div>
-                                <div class="p-about__contact__icon"><img alt="" height="19"
-                                                                         src="../assets/img/icon/contact.svg" width="25"></div>
-                            </section>
-                        </div>
-                        <div class="p-about__contact__dummy">
-                            <address><a
-                                        class="p-about__contact__link js-target--pointer__stateChange js-trigger--aboutHover"
-                                        data-hover-in-time="1350" data-hover-out-time="1350"
-                                        href="mailto:<%= contactEmail %>"></a>
-                                <div class="p-about__contact__bg"></div>
-                            </address>
-                        </div>
+      <div class="js-smooth-scroll-content" id="contents">
+        <div class="l-about page-content" id="about">
+          <div class="p-about">
+            <div class="p-about__bg"></div>
+            <div class="js-target--langContent">
+              <div class="p-about__inner">
+                <section class="p-about__section js-target--indicator first">
+                  <p class="p-about__section__num b-fonts__medium">01</p>
+                  <div class="">
+                    <a class="js-target--pointer__stateChange" href="/#" style="display: inline-block">
+                      <div class="js-target__inner--pointer__stateChange js-target__parent--spring">
+                        <img src="<%= logo %>" width="200" style="padding:1rem" />
+                      </div>
+                    </a>
+                  </div>
+                  <div class="p-about__section__body">
+                    <div lang="en" class="p_about_descs">
+                      <p class="p-about__section__descriptions"><%- description %></p>
                     </div>
-                </div>
+                  </div>
+                </section>
+                <section class="p-about__section js-target--indicator">
+                  <p class="p-about__section__num b-fonts__medium">02</p>
+                  <div class="p-about__section__head">
+                    <h1 class="p-about__section__titles b-fonts__medium">
+                      <%= ownerName %></h1>
+                  </div>
+                  <div class="p-about__section__body">
+                    <dl>
+                      <div class="c-grid p_about_descs">
+                        <dt class="c-grid__head" style="display: none;">
+                          <div class="p-about__thumb">
+                            <div class="p-about__thumb__inner js-target--parallax"></div>
+                          </div>
+                        </dt>
+                        <dd class="c-grid__foot">
+                          <p class="p-about__section__descriptions" lang="en">
+                            <%= ownerDescription %>
+                          </p>
+                        </dd>
+                      </div>
+                    </dl>
+                  </div>
+                </section>
+                <section class="p-about__section p-about__award js-target--indicator">
+                  <p class="p-about__section__num b-fonts__medium">03</p>
+                  <div class="p-about__section__head">
+                    <h1 class="p-about__section__titles b-fonts__medium">
+                      <%= staticList["Award"] %></h1>
+                  </div>
+                  <div class="p-about__section__body js-award">
+                    <dl>
+                      <% awardsList.forEach(function(item) { %>
+                      <div class="c-grid lang-fonts--en" lang="en">
+                        <dt class="p-about__award__dt p-about__dt c-grid__head">
+                          <p class="p-about__section__description"><%= item["dateText"] %></p>
+                        </dt>
+                        <dd class="c-grid__body p-about__dd p-about__award__dd">
+                          <p class="p-about__section__description"><span class="text"><%= item["description"] %></span>
+                          </p>
+                        </dd>
+                      </div>
+                      <% }); %>
+                    </dl>
+                  </div>
+                </section>
+                <section class="p-about__section p-about__weAre js-target--indicator">
+                  <p class="p-about__section__num b-fonts__medium">04</p>
+                  <div>
+                    <div class="p-about__section__head">
+                      <h1 class="p-about__section__titles b-fonts__medium"><%= staticList["We Are"] %></h1>
+                    </div>
+                    <div class="p-about__section__body p_about_descs">
+                      <div class="p-about__weAre__content__head" lang="en">
+                        <p class="p-about__section__description lang-fonts--en" lang="en"><span><%= companyName %></span><br><small></small>
+                        </p>
+                      </div>
+                      <dl class="lang-fonts--en" lang="en">
+                        <div class="c-grid">
+                          <dt class="p-about__weAre__dt p-about__dt c-grid__head">
+                            <p class="p-about__section__description"> <%= staticList["Established"] %></p>
+                          </dt>
+                          <dd class="c-grid__body p-about__dd p-about__weAre__dd">
+                            <p class="p-about__section__description"><span class="text"><%= established %></span>
+                            </p>
+                          </dd>
+                        </div>
+                        <div class="c-grid">
+                          <dt class="p-about__weAre__dt p-about__dt c-grid__head">
+                            <p class="p-about__section__description"><%= staticList["Principal"] %></p>
+                          </dt>
+                          <dd class="c-grid__body p-about__dd p-about__weAre__dd">
+                            <p class="p-about__section__description"><span class="text"><%= principal %></span>
+                            </p>
+                          </dd>
+                        </div>
+                        <div class="c-grid">
+                          <dt class="p-about__weAre__dt p-about__dt c-grid__head">
+                            <p class="p-about__section__description"><%= staticList["Location"] %></p>
+                          </dt>
+                          <dd class="c-grid__body p-about__dd p-about__weAre__dd">
+                            <p class="p-about__section__description"><a class="js-target--pointer__stateChange c-link--underline js-hover" data-hover-in-time="1010" data-hover-out-time="850" href="<%= locationLink %>" target="_blank"><span class="text js-target__inner--pointer__stateChange c-link--underline__inner"><%= address %><span class="c-link--underline__line"></span></span></a></p>
+                          </dd>
+                        </div>
+                        <div class="c-grid">
+                          <dt class="p-about__weAre__dt p-about__dt c-grid__head">
+                            <p class="p-about__section__description"><%= staticList["Tel"] %></p>
+                          </dt>
+                          <dd class="c-grid__body p-about__dd p-about__weAre__dd">
+                            <p class="p-about__section__description"><span class="text"><%= phoneNumber %></span>
+                            </p>
+                          </dd>
+                        </div>
+                        <div class="c-grid">
+                          <dt class="p-about__weAre__dt p-about__dt c-grid__head">
+                            <p class="p-about__section__description"><%= staticList["Mobile"] %></p>
+                          </dt>
+                          <dd class="c-grid__body p-about__dd p-about__weAre__dd">
+                            <p class="p-about__section__description"><span class="text"><%= faxNumber %></span>
+                            </p>
+                          </dd>
+                        </div>
+                      </dl>
+                    </div>
+                  </div>
+                </section>
+                <section class="p-about__section p-about__subContact">
+                  <address>
+                    <dl class="p-about__subContact__inner">
+                      <div class="p-about__subContact__unit">
+                        <dt class="b-fonts__medium"><%= staticList["Hello"] %>.</dt>
+                        <dd>
+                          <a class="js-target--pointer__stateChange lang-fonts--en c-link--underline js-hover" data-hover-in-time="1010" data-hover-out-time="850" href="mailto: <%= contactEmail %>"><span class="js-target__inner--pointer__stateChange c-link--underline__inner"><%= contactEmail %><span class="c-link--underline__line"></span></span></a>
+                        </dd>
+                      </div>
+                      <div class="p-about__subContact__unit">
+                        <dt class="b-fonts__medium"><%= staticList["Work Together"] %>.</dt>
+                        <dd>
+                          <a class="js-target--pointer__stateChange lang-fonts--en c-link--underline js-hover" data-hover-in-time="1010" data-hover-out-time="850" href="mailto:<%= workTogetherEmail %>"><span class="js-target__inner--pointer__stateChange c-link--underline__inner"><%= workTogetherEmail %><span class="c-link--underline__line"></span></span></a>
+                        </dd>
+                      </div>
+
+                    </dl>
+                  </address>
+                </section>
+                <section class="p-about__contact__section js-target--sideFixPosition p-about__section js-target--indicator">
+                  <p class="p-about__section__num b-fonts__medium">05</p>
+                  <h1 class="p-about__section__title p-about__contact__title b-fonts__medium"><%= staticList["Hire Us"] %></h1>
+                  <div class="p-about__contact__line">
+                    <div class="p-about__contact__line__outer">
+                      <div class="p-about__contact__line__inner"></div>
+                    </div>
+                  </div>
+                  <div class="p-about__contact__icon"><img alt="" height="19" src="../assets/img/icon/contact.svg" width="25"></div>
+                </section>
+              </div>
+              <div class="p-about__contact__dummy">
+                <address><a class="p-about__contact__link js-target--pointer__stateChange js-trigger--aboutHover" data-hover-in-time="1350" data-hover-out-time="1350" href="mailto:<%= contactEmail %>"></a>
+                  <div class="p-about__contact__bg"></div>
+                </address>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </main>
     <aside class="p-sideContact" id="side-contact">
-        <address class="l-wide-container">
-            <dl class="p-sideContact__inner js-target--sideFix">
-                <div class="p-sideContact__unit">
-                    <dt class="b-fonts__medium"><%= staticList["Hello"] %>.</dt>
-                    <dd><a class="js-target--pointer__stateChange lang-fonts--en c-link--underline js-hover"
-                           data-hover-in-time="1010" data-hover-out-time="850" href="mailto:<%= contactEmail %>"><span
-                                    class="js-target__inner--pointer__stateChange c-link--underline__inner"><%= contactEmail %><span
-                                        class="c-link--underline__line"></span></span></a></dd>
-                </div>
-                <div class="p-sideContact__unit">
-                    <dt class="b-fonts__medium"><%= staticList["Work Together"] %>.</dt>
-                    <dd><a class="js-target--pointer__stateChange lang-fonts--en c-link--underline js-hover"
-                           data-hover-in-time="1010" data-hover-out-time="850" href="mailto:<%=workTogetherEmail%>">
-                        <span class="js-target__inner--pointer__stateChange c-link--underline__inner">
-                            <%= workTogetherEmail %>
-                            <span class="c-link--underline__line"></span>
-                        </span>
-                        </a>
-                    </dd>
-                </div>
-                <div class="p-sideContact__unit">
-                            <% if(instagram) { %>
-                                <a href="<%= instagram %>" target="_blank">
-                                    <img src="../assets/social/insta.svg" width="30">
-                                </a>
-                            <% } %>
-                            <% if(facebook) { %>
-                                <a href="<%= facebook %>" target="_blank">
-                                <img src="../assets/social/pint.svg" width="30">
-                                </a>
-                            <% } %>
-                            <% if(linkedin) { %>
-                                <a href="<%= linkedin %>" target="_blank">
-                                <img src="../assets/social/link.svg" width="30">
-                                </a>
-                            <% } %>
-                            
-
-                </div>
-            </dl>
-        </address>
+      <address class="l-wide-container">
+        <dl class="p-sideContact__inner js-target--sideFix">
+          <div class="p-sideContact__unit">
+            <dt class="b-fonts__medium"><%= staticList["Hello"] %>.</dt>
+            <dd><a class="js-target--pointer__stateChange lang-fonts--en c-link--underline js-hover" data-hover-in-time="1010" data-hover-out-time="850" href="mailto:<%= contactEmail %>"><span class="js-target__inner--pointer__stateChange c-link--underline__inner"><%= contactEmail %><span class="c-link--underline__line"></span></span></a></dd>
+          </div>
+          <div class="p-sideContact__unit">
+            <dt class="b-fonts__medium"><%= staticList["Work Together"] %>.</dt>
+            <dd><a class="js-target--pointer__stateChange lang-fonts--en c-link--underline js-hover" data-hover-in-time="1010" data-hover-out-time="850" href="mailto:<%=workTogetherEmail%>">
+                <span class="js-target__inner--pointer__stateChange c-link--underline__inner">
+                  <%= workTogetherEmail %>
+                  <span class="c-link--underline__line"></span>
+                </span>
+              </a>
+            </dd>
+          </div>
+          <div class="p-sideContact__unit">
+            <% if(instagram) { %>
+            <a href="<%= instagram %>" target="_blank">
+              <img src="../assets/social/insta.svg" width="30">
+            </a>
+            <% } %>
+            <% if(facebook) { %>
+            <a href="<%= facebook %>" target="_blank">
+              <img src="../assets/social/pint.svg" width="30">
+            </a>
+            <% } %>
+            <% if(linkedin) { %>
+            <a href="<%= linkedin %>" target="_blank">
+              <img src="../assets/social/link.svg" width="30">
+            </a>
+            <% } %>
+          </div>
+        </dl>
+      </address>
     </aside>
+
+
+
     <div class="p-stage" id="stage">
-        <div id="app-canvas"></div>
-        <ul class="p-stage__menu">
-            <% sliders.forEach(function(item) { %>
-                <li class=" js-canvas__target"
-                    data-canvas-thumb="<%= item["image"] %>"
-                    data-canvas-url="/work-detail/<% if(item["Work"]) { %><%= item["Work"]["slug"] %><% } else { %>'#'<% } %>"
-                    data-canvas-zoom="<%= item["image"] %>">
-                    <h1 style="color: #D7BD9D; font-size: 40px;"><%= item["title"] %></h1>
-                    <%= item["subTitle"] %>
-                </li>
-            <% }); %>
-        </ul>
+      <div id="app-canvas"></div>
+      <ul class="p-stage__menu">
+        <li class=" js-canvas__target" data-canvas-thumb="" data-canvas-url="/works" data-canvas-zoom="">
+          <!-- <h1 style="color: #D7BD9D; font-size: 40px;"><%= loadingText %> </h1> -->
+        </li>
+      </ul>
     </div>
     <div id="indicator">
-        <div id="app-indicator"></div>
+      <div id="app-indicator"></div>
     </div>
     <div class="p-pageCover js-target--height__screenFix--mobile" data-fix-height-ratio="1.1" id="pageCover">
-        <div class="p-pageCover__inner js-target--height__screenFix--mobile" data-fix-height-ratio="1"><p
-                    class="p-pageCover__text b-fonts__medium" id="pageCoverText">Next</p></div>
+      <div class="p-pageCover__inner js-target--height__screenFix--mobile" data-fix-height-ratio="1">
+        <p class="p-pageCover__text b-fonts__medium" id="pageCoverText">Next</p>
+      </div>
     </div>
-</div>
-<div id="app-mousePointer"></div>
-<div class="l-wide-container p-waitLoader" id="wait-loader">
+  </div>
+  <div id="app-mousePointer"></div>
+  <div class="l-wide-container p-waitLoader" id="wait-loader">
     <div class="p-waitLoader__inner">
-        <div class="p-waitLoader__circle">
-            <div class="p-waitLoader__layer back"></div>
-            <div class="p-waitLoader__layer front"></div>
-        </div>
+      <div class="p-waitLoader__circle">
+        <div class="p-waitLoader__layer back"></div>
+        <div class="p-waitLoader__layer front"></div>
+      </div>
     </div>
-</div>
-<% include footer.ejs%>
+  </div>
+  <% include footer.ejs%>
 </body>
+
 </html>

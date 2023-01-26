@@ -1,3 +1,4 @@
+
 !(function (e) {
   function t(t) {
     for (
@@ -12161,6 +12162,10 @@
                     "viewDidAppear",
                     this
                   ).call(this),
+                  document
+                  .querySelector(".p-loading")?.parentNode?.removeChild(
+                    document.querySelector(".p-loading")
+                  );
                     document.body.classList.add("is-stage-hide"),
                     (PROJECT.resizeHandler[15] = function (t) {
                       e._setFooterTop();
@@ -12179,6 +12184,10 @@
                     "viewWillDisappear",
                     this
                   ).call(this),
+                  document
+                  .querySelector(".p-loading")?.parentNode?.removeChild(
+                    document.querySelector(".p-loading")
+                  );
                     document.body.classList.remove("is-stage-hide"),
                     (this.canUpdatePageCover = !1),
                     (this.canResize = !1),
@@ -13376,6 +13385,10 @@
                                         },
                                       },
                                     },
+                                    
+                                    
+
+
                                     [
                                       n(
                                         "div",
@@ -13396,10 +13409,11 @@
                                               "); translate3d(0,0,0);",
                                             domProps: {
                                               innerHTML: e._s(
-                                                e.slideTitle[
-                                                  e.slideNumState.current
-                                                ]
-                                              ),
+
+                                                (APP.controllerManager._controllers[0].info.path.includes("/works") === true) 
+                                                  ? '<h1 style="color: #D7BD9D; font-size: 40px;">Heyday Interiors </h1> '
+                                                  :  e.slideTitle[e.slideNumState.current]
+                                                ),
                                             },
                                           }),
                                         ]
@@ -14597,6 +14611,14 @@
                     "viewDidAppear",
                     this
                   ).call(this),
+                  document
+                  .querySelector(".p-loading")?.parentNode?.removeChild(
+                    document.querySelector(".p-loading")
+                  );
+                  document
+                  .querySelector(".p-loading")?.parentNode?.removeChild(
+                    document.querySelector(".p-loading")
+                  );
                     document.body.classList.add("is-stage-hide");
                 },
               },
@@ -14608,7 +14630,12 @@
                     "viewWillDisappear",
                     this
                   ).call(this),
+                  document
+                  .querySelector(".p-loading")?.parentNode?.removeChild(
+                    document.querySelector(".p-loading")
+                  );
                     document.body.classList.remove("is-stage-hide");
+                    
                 },
               },
               {
@@ -14785,6 +14812,10 @@
                   "viewDidAppear",
                   this
                 ).call(this),
+                document
+                  .querySelector(".p-loading")?.parentNode?.removeChild(
+                    document.querySelector(".p-loading")
+                  );
                   document.body.classList.add("is-stage-hide"),
                   this._setSideFixPosition();
               },
@@ -14797,6 +14828,10 @@
                   "viewWillDisappear",
                   this
                 ).call(this),
+                document
+                  .querySelector(".p-loading")?.parentNode?.removeChild(
+                    document.querySelector(".p-loading")
+                  );
                   document.body.classList.remove("is-stage-hide");
               },
             },

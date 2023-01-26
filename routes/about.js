@@ -8,9 +8,8 @@ router.get('/', async function(req, res, next) {
 
    await Promise.all([
        axios.get(`/about/general`,{headers:{"Accept-Language": req.cookies.lng ? req.cookies.lng : "" }}),
-       axios.get(`/about/owner`,{headers:{"Accept-Language": req.cookies.lng ? req.cookies.lng : "" }}),
+       axios.get(`/about/owner`),
        axios.get(`/about/awards`),
-       axios.get(`/slider/all`,{headers:{"Accept-Language": req.cookies.lng ? req.cookies.lng : "" }}),
        axios.get('/options/get'),
        axios.get('/options/website-statics',{headers:{"Accept-Language": req.cookies.lng ? req.cookies.lng : "" }}),
        axios.get('/meta-options/get')
@@ -24,13 +23,12 @@ router.get('/', async function(req, res, next) {
            x.dateText = moment(x.dateText).format('YYYY')
            return x
        });
-       const sliders = resp[3].data.result;
-       const logo = resp[4].data.result.logo;
-       const webSiteTitle = resp[4].data.result.title;
-       const staticList = resp[5].data;
-       const metaDescription = resp[6].data.result ? resp[6].data.result.aboutMetaDescription : ''
-       const pinterestCode = resp[6].data.result ? resp[6].data.result.pinterestCode : ''
-
+       const logo = resp[3].data.result.logo;
+       const loadingText = resp[3].data.result.loadingText;
+       const webSiteTitle = resp[3].data.result.title;
+       const staticList = resp[4].data;
+       const metaDescription = resp[5].data.result ? resp[5].data.result.aboutMetaDescription : ''
+       const pinterestCode = resp[5].data.result ? resp[5].data.result.pinterestCode : ''
        const responseData = {
            title,
            description,
@@ -46,7 +44,6 @@ router.get('/', async function(req, res, next) {
            ownerName,
            ownerDescription,
            awardsList,
-           sliders,
            webSiteTitle,
            logo,
            staticList,
@@ -54,10 +51,15 @@ router.get('/', async function(req, res, next) {
            instagram,
            linkedin,
            facebook,
-           pinterestCode
+           pinterestCode,
+           loadingText
        }
+       
+       console.log('-------------',responseData);
        res.render('about', responseData);
     }).catch(err => {
+        
+        console.log('error',{message: err.message});
         res.render('error',{message: err.message})
     })
 });
