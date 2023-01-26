@@ -2,7 +2,6 @@ var express = require('express');
 const axios = require("axios");
 const moment = require("moment");
 var router = express.Router();
-
 /* GET home page. */
 router.get('/:slug', async function(req, res, next) {
     await Promise.all([
@@ -27,23 +26,13 @@ router.get('/:slug', async function(req, res, next) {
         const logo = resp[4].data.result.logo;
         const loadingText  = resp[4].data.result.logoText;
         const webSiteTitle = resp[4].data.result.title
-        const detail = resp[5]?.data.result;
+        const detail = resp[5].data.result;
         const staticList = resp[6].data;
         const works = resp[7].data.result;
         const url = req.originalUrl;
         var index = works.findIndex(obj => obj.slug==detail.slug);
         var thisPage = (works[index]);
         var nextPage = (works[index+1] ? works[index+1] : works[0] );
-
-
-        console.log('---------');
-        console.log(index);
-        console.log(sliders);
-        console.log('---1------');
-        console.log(detail);
-        console.log('---2------');
-
-
         const responseData = {
             description,
             contactEmail,
