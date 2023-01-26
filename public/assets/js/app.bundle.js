@@ -13379,6 +13379,7 @@
                                     [
                                       n(
                                         "div",
+                                        
                                         {
                                           on: {
                                             mouseenter:
@@ -13744,7 +13745,7 @@
                                   e.titleScaleSize +
                                   ") translate3d(0,0,0)",
                                 domProps: {
-                                  innerHTML: e._s(e.transitionTitle),
+                                  innerHTML: e._s('<h1 style="color: #D7BD9D; font-size: 40px;">Heyday Interiors </h1> '),
                                 },
                               }),
                             ]
