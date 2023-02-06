@@ -12271,8 +12271,8 @@
                       PROJECT.screenFix.addNoKeyUp(),
                       PROJECT.screenFix.addNoWheel(),
                       "list" === PROJECT.worksMode
-                        ? ((PROJECT.pageTransitionState.worksDetailToWorks = 1),
-                          i.a.triggerPageTransition("/works/"))
+                        ? ((PROJECT.pageTransitionState.worksDetailToTop = 1),
+                        i.a.triggerPageTransition(PROJECT.worksUrlList.cycle(this.info.path)))
                         : ((PROJECT.pageTransitionState.worksDetailToTop = 1),
                         i.a.triggerPageTransition(PROJECT.worksUrlList.cycle(this.info.path)))))
                 },
